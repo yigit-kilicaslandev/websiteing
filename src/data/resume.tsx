@@ -12,13 +12,13 @@ import { Kubernetes } from "@/components/ui/svgs/kubernetes";
 import { Astro } from "@/components/ui/svgs/astro";
 
 export const DATA = {
-  name: "Alex Mercer - Software Engineer",
-  initials: "AM",
-  url: "https://alexmercer.dev",
-  location: "Austin, TX",
-  locationLink: "https://www.google.com/maps/place/austin+tx",
+  name: "Yiğit Kılıçaslan - Software Engineer",
+  initials: "YK",
+  url: "https://yigitkilicaslan.com",
+  location: "Türkiye İstanbul",
+  locationLink: "https://www.google.com/maps/place/%C4%B0stanbul/",
   description:
-    "Full-stack engineer turned indie founder. I love building developer tools, fast UIs, and products people actually use.",
+    "Full time Robotex & Ai Developer",
   summary:
     "In early 2023, I left a senior engineering role to go all-in on building my own SaaS products. Before that, [I completed a double degree in computer science and business](/#education), [interned at companies like Stripe and Cloudflare](/#work), and [competed in 18+ hackathons](/#hackathons). I also spent a summer in San Francisco as part of a founder residency focused on shipping fast and finding early customers.",
   avatarUrl: "/picofme.png",

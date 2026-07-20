@@ -9,10 +9,11 @@ import { Golang } from "@/components/ui/svgs/golang";
 import { Postgresql } from "@/components/ui/svgs/postgresql";
 import { Docker } from "@/components/ui/svgs/docker";
 import { Kubernetes } from "@/components/ui/svgs/kubernetes";
+import { ArchLinux } from "@/components/ui/svgs/ArchLinux";
 
 export const DATA = {
   name: "Yiğit Kılıçaslan - Software Engineer",
-  initials: "AM",
+  initials: "YK",
   url: "https://yigitkilicaslan.com",
   location: "Türkiye İstanbul",
   locationLink: "https://www.google.com/maps/place/%C4%B0stanbul/",
@@ -70,19 +71,19 @@ export const DATA = {
     { name: "Go", icon: Golang },
     { name: "Postgres", icon: Postgresql },
     { name: "Docker", icon: Docker },
-    { name: "Kubernetes", icon: Kubernetes },
+    { name: "Arch Linux", icon: ArchLinux },
   ],
   navbar: [
     { href: "/", icon: House, label: "Home" },
     { href: "/blog", icon: Library, label: "Blog" },
   ],
   contact: {
-    email: "alex@alexmercer.dev",
-    tel: "+1 512 000 0000",
+    email: "contact@yigitkilicaslan.com",
+    tel: "+90 545 910 16 20",
     social: {
       GitHub: {
         name: "GitHub",
-        url: "https://github.com",
+        url: "https://github.com/yigit-kilicaslandev",
         icon: Icons.github,
         navbar: true,
       },
@@ -106,7 +107,7 @@ export const DATA = {
       },
       email: {
         name: "Send Email",
-        url: "mailto:alex@alexmercer.dev",
+        url: "mailto:contact@yigitkilicaslan.com",
         icon: Icons.email,
         navbar: false,
       },

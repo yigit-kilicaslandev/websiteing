@@ -36,9 +36,9 @@ export const DATA = {
     },
     hackathons: {
       order: 7, enabled: true,
-      label: "Projects",
-      heading: "My Recent Projects",
-      text: "I enjoy building practical projects that solve real problems and help me learn new skills.",
+      label: "Competitions",
+      heading: "My Recent Competitions",
+      text: "I've participated in several robot and coding competitions, where I've had the opportunity to collaborate with talented individuals and develop innovative solutions. Here are some of my recent achievements.",
     },
     photos: {
       order: 6, enabled: true,

@@ -2,8 +2,6 @@ import { Icons } from "@/components/icons";
 import { House, Library } from "lucide-react";
 import { ReactLight } from "@/components/ui/svgs/reactLight";
 import { NextjsIconDark } from "@/components/ui/svgs/nextjsIconDark";
-import { Typescript } from "@/components/ui/svgs/typescript";
-import { Nodejs } from "@/components/ui/svgs/nodejs";
 import { Python } from "@/components/ui/svgs/python";
 import { Arduino } from "@/components/ui/svgs/Arduino";
 import { Postgresql } from "@/components/ui/svgs/postgresql";

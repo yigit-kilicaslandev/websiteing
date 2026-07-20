@@ -52,7 +52,7 @@ export const DATA = {
     },
   },
   photos: [
-    { src: "/photos/photo1.jpg", alt: "Photo 1" },
+    { src: "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcQgMZvQNOE6XUxmgZJ6XejBJqhwz8ElMSCQK__vAtOGV5W9NL6QgVFVLuTBvZCnoNGe6umM2bMh6XxB7FIbecak7QA&s=19", alt: "Photo 1" },
     { src: "/photos/photo2.jpg", alt: "Photo 2" },
     { src: "/photos/photo3.jpg", alt: "Photo 3" },
     { src: "/photos/photo4.jpg", alt: "Photo 4" },

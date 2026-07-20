@@ -9,7 +9,6 @@ import { Golang } from "@/components/ui/svgs/golang";
 import { Postgresql } from "@/components/ui/svgs/postgresql";
 import { Docker } from "@/components/ui/svgs/docker";
 import { Kubernetes } from "@/components/ui/svgs/kubernetes";
-import { Astro } from "@/components/ui/svgs/astro";
 
 export const DATA = {
   name: "Yiğit Kılıçaslan - Software Engineer",
@@ -63,7 +62,6 @@ export const DATA = {
     { src: "/photos/photo9.jpg", alt: "Photo 9" },
   ],
   skills: [
-    { name: "Astro", icon: Astro },
     { name: "React", icon: ReactLight },
     { name: "Next.js", icon: NextjsIconDark },
     { name: "Typescript", icon: Typescript },

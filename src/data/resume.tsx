@@ -5,9 +5,9 @@ import { NextjsIconDark } from "@/components/ui/svgs/nextjsIconDark";
 import { Typescript } from "@/components/ui/svgs/typescript";
 import { Nodejs } from "@/components/ui/svgs/nodejs";
 import { Python } from "@/components/ui/svgs/python";
-import { Golang } from "@/components/ui/svgs/golang";
+import { Arduino } from "@/components/ui/svgs/Arduino";
 import { Postgresql } from "@/components/ui/svgs/postgresql";
-import { Docker } from "@/components/ui/svgs/docker";
+import { Html } from "@/components/ui/svgs/Html";
 import { Kubernetes } from "@/components/ui/svgs/kubernetes";
 import { ArchLinux } from "@/components/ui/svgs/ArchLinux";
 
@@ -63,14 +63,9 @@ export const DATA = {
     { src: "/photos/photo9.jpg", alt: "Photo 9" },
   ],
   skills: [
-    { name: "React", icon: ReactLight },
-    { name: "Next.js", icon: NextjsIconDark },
-    { name: "Typescript", icon: Typescript },
-    { name: "Node.js", icon: Nodejs },
+    { name: "Arduino", icon: Arduino },
+    { name: "Html", icon: Html },
     { name: "Python", icon: Python },
-    { name: "Go", icon: Golang },
-    { name: "Postgres", icon: Postgresql },
-    { name: "Docker", icon: Docker },
     { name: "Arch Linux", icon: ArchLinux },
   ],
   navbar: [

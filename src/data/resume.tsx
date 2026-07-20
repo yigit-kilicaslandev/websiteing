@@ -1,13 +1,15 @@
 import { Icons } from "@/components/icons";
 import { House, Library } from "lucide-react";
-import { ReactLight } from "@/components/ui/svgs/reactLight";
-import { NextjsIconDark } from "@/components/ui/svgs/nextjsIconDark";
-import { Python } from "@/components/ui/svgs/python";
-import { Arduino } from "@/components/ui/svgs/Arduino";
-import { Postgresql } from "@/components/ui/svgs/postgresql";
-import { Html } from "@/components/ui/svgs/Html";
-import { Kubernetes } from "@/components/ui/svgs/kubernetes";
-import { ArchLinux } from "@/components/ui/svgs/ArchLinux";
+import { siArduino, siHtml5, siPython, siArchlinux } from "simple-icons/icons";
+
+const SimpleIcon = ({ icon, className }: { icon: { svg: string }; className?: string }) => (
+  <svg
+    viewBox="0 0 24 24"
+    className={className}
+    fill="currentColor"
+    dangerouslySetInnerHTML={{ __html: icon.svg }}
+  />
+);
 
 export const DATA = {
   name: "Yiğit Kılıçaslan - Software Engineer",
@@ -18,7 +20,7 @@ export const DATA = {
   description:
     "Full time Robotex & Ai Developer",
   summary:
-    "In early 2023, I left a senior engineering role to go all-in on building my own SaaS products. Before that, [I completed a double degree in computer science and business](/#education), [interned at companies like Stripe and Cloudflare](/#work), and [competed in 18+ hackathons](/#hackathons). I also spent a summer in San Francisco as part of a founder residency focused on shipping fast and finding early customers.",
+    "Hi, I'm Yiğit Kılıçaslan, a software engineer with a passion for building innovative solutions. I have experience in web development, robotics, and AI. I enjoy working on challenging projects that push the boundaries of technology. I am always eager to learn new skills and stay up-to-date with the latest trends in the tech industry. In my free time, I like to contribute to open-source projects and spend my time in github. I am currently looking for new opportunities to grow and make an impact in the tech world. If you're interested in collaborating or just want to say hi, feel free to reach out to me via email. Also, I am open to freelance work and consulting opportunities.",
   avatarUrl: "/picofme.png",
   ogImage: "/og_image.png",
   sections: {
@@ -34,9 +36,9 @@ export const DATA = {
     },
     hackathons: {
       order: 7, enabled: true,
-      label: "Hackathons",
-      heading: "I like building things",
-      text: "During my time in university, I attended {count}+ hackathons. People from around the country would come together and build incredible things in 2-3 days. It was eye-opening to see the endless possibilities brought to life by a group of motivated and passionate individuals.",
+      label: "Projects",
+      heading: "My Recent Projects",
+      text: "I enjoy building practical projects that solve real problems and help me learn new skills.",
     },
     photos: {
       order: 6, enabled: true,
@@ -45,8 +47,8 @@ export const DATA = {
     contact: {
       order: 8, enabled: true,
       label: "Contact",
-      heading: "Get in Touch",
-      text: "Want to chat? Just shoot me a dm with a direct question on twitter and I'll respond whenever I can. I will ignore all soliciting.",
+      heading: "contact@yigitkilicaslan.com",
+      text: "Want to chat? Just shoot me an email with a direct question and I'll respond whenever I can. I will ignore all soliciting.",
     },
   },
   photos: [
@@ -61,10 +63,10 @@ export const DATA = {
     { src: "/photos/photo9.jpg", alt: "Photo 9" },
   ],
   skills: [
-    { name: "Arduino", icon: Arduino },
-    { name: "Html", icon: Html },
-    { name: "Python", icon: Python },
-    { name: "Arch Linux", icon: ArchLinux },
+    { name: "Arduino", icon: (props) => <SimpleIcon icon={siArduino} {...props} /> },
+    { name: "Html", icon: (props) => <SimpleIcon icon={siHtml5} {...props} /> },
+    { name: "Python", icon: (props) => <SimpleIcon icon={siPython} {...props} /> },
+    { name: "Arch Linux", icon: (props) => <SimpleIcon icon={siArchlinux} {...props} /> },
   ],
   navbar: [
     { href: "/", icon: House, label: "Home" },
@@ -81,28 +83,30 @@ export const DATA = {
         navbar: true,
       },
       LinkedIn: {
-        name: "LinkedIn",
-        url: "https://linkedin.com",
-        icon: Icons.linkedin,
-        navbar: true,
-      },
+          name: "LinkedIn",
+          url: "https://linkedin.com",
+          icon: Icons.linkedin,
+          navbar: false,
+
+        },
       X: {
-        name: "X",
-        url: "https://x.com",
-        icon: Icons.x,
-        navbar: true,
-      },
+          name: "X",
+          url: "https://x.com",
+          icon: Icons.x,            
+          navbar: false,
+
+        },
       Youtube: {
-        name: "Youtube",
-        url: "https://youtube.com",
-        icon: Icons.youtube,
-        navbar: true,
-      },
+          name: "Youtube",
+          url: "https://youtube.com",            
+          icon: Icons.youtube,
+          navbar: false,
+        },
       email: {
         name: "Send Email",
         url: "mailto:contact@yigitkilicaslan.com",
         icon: Icons.email,
-        navbar: false,
+        navbar: true,
       },
     },
   },
@@ -269,17 +273,17 @@ export const DATA = {
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "",
-      video: "https://cdn.magicui.design/bento-grid.mp4",
+      image: "photos/Website.png",
+      video: "",
     },    
   ],
   hackathons: [
     {
-      title: "StormHacks 2019",
-      dates: "March 2nd - 3rd, 2019",
-      location: "Burnaby, BC",
-      description: "Built a network latency heatmap tool that visualises CDN performance across regions using real user data injected via a lightweight JS snippet.",
-      image: "https://avatar.vercel.sh/stormhacks-2019?size=40",
+      title: "Lego Sumo Robot Competition",
+      dates: "2026",
+      location: "Marmara İstanbul",
+      description: "Made a Lego Sumo Robot that can push other robots out of the ring. It was a fun and challenging experience to design and program the robot to compete against other teams. I learned a lot about robotics, programming, and teamwork. I also won the competition and received a trophy for my achievement. I was proud of my robot and the skills I developed during the competition. I hope to participate in more robotics competitions in the future and continue to improve my skills. I also want to thank my team members for their support and collaboration throughout the project. It was a great learning experience and I am excited to apply what I learned to future projects.",
+      image: "https://1000logos.net/wp-content/uploads/2017/03/Lego-Logo-1972.png",
       win: "Best Infrastructure Hack",
       links: [],
     },

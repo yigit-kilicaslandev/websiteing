@@ -9,11 +9,11 @@ import { Golang } from "@/components/ui/svgs/golang";
 import { Postgresql } from "@/components/ui/svgs/postgresql";
 import { Docker } from "@/components/ui/svgs/docker";
 import { Kubernetes } from "@/components/ui/svgs/kubernetes";
-import { ArchLinux } from "@/components/ui/svgs/ArchLinux";
+import { Astro } from "@/components/ui/svgs/astro";
 
 export const DATA = {
   name: "Yiğit Kılıçaslan - Software Engineer",
-  initials: "YK",
+  initials: "AM",
   url: "https://yigitkilicaslan.com",
   location: "Türkiye İstanbul",
   locationLink: "https://www.google.com/maps/place/%C4%B0stanbul/",
@@ -63,11 +63,7 @@ export const DATA = {
     { src: "/photos/photo9.jpg", alt: "Photo 9" },
   ],
   skills: [
-<<<<<<< HEAD
-    { name: "Arch Linux ", icon: ArchLinux},
-=======
-    { name: "Arch Linux", icon: ArchLinux },
->>>>>>> 473954f7e16c387c855fc4841299b5902ed8e38d
+    { name: "Astro", icon: Astro },
     { name: "React", icon: ReactLight },
     { name: "Next.js", icon: NextjsIconDark },
     { name: "Typescript", icon: Typescript },

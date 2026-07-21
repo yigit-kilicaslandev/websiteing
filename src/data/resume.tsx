@@ -25,8 +25,8 @@ export const DATA = {
   ogImage: "/og_image.png",
   sections: {
     about: { order: 1, enabled: true, heading: "About" },
-    work: { order: 2, enabled: true, heading: "Work Experience", presentLabel: "Present" },
-    education: { order: 3, enabled: true, heading: "Education" },
+    work: { order: 2, enabled: false, heading: "Work Experience", presentLabel: "Present" },
+    education: { order: 2, enabled: true, heading: "Education" },
     skills: { order: 4, enabled: true, heading: "Skills" },
     projects: {
       order: 5, enabled: true,
@@ -221,27 +221,23 @@ export const DATA = {
   ],
   projects: [
     {
-      title: "Stackwise",
-      href: "https://stackwise.dev",
+      title: "Lego Sumo Robot",
+      href: "https://github.com/yigit-kilicaslandev/2026-legosumo",
       dates: "March 2024 - Present",
       active: true,
       description:
         "Built an AI-powered code review tool that integrates with GitHub PRs and provides context-aware feedback based on your team's codebase conventions. Used by 300+ engineering teams.",
       technologies: [
-        "Next.js",
-        "TypeScript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
-        "Stripe",
-        "Shadcn UI",
-        "OpenAI API",
+        "Block-based (Scratch)",
+        "Python",
+        "Lego Mindstorms",
+        "Icon-based (Legacy/NXT/EV3)"
       ],
       links: [
         {
-          type: "Website",
-          href: "https://stackwise.dev",
-          icon: <Icons.globe className="size-3" />,
+          type: "Source",
+          href: "https://github.com/yigit-kilicaslandev/2026-legosumo",
+          icon: <Icons.github className="size-3" />,
         },
       ],
       image: "/example-website.webp",

@@ -1,3 +1,4 @@
+import type { SVGProps } from "react";
 import { Icons } from "@/components/icons";
 import { House, Library } from "lucide-react";
 import { siArduino, siHtml5, siPython, siArchlinux } from "simple-icons/icons";
@@ -26,8 +27,9 @@ export const DATA = {
   sections: {
     about: { order: 1, enabled: true, heading: "About" },
     work: { order: 2, enabled: false, heading: "Work Experience", presentLabel: "Present" },
-    education: { order: 2, enabled: true, heading: "Education" },
-    skills: { order: 4, enabled: true, heading: "Skills" },
+  // Enable education section and set order to 2 later in the code
+    education: { order: 2, enabled: false, heading: "Education" },
+    skills: { order: 3, enabled: true, heading: "Skills" },
     projects: {
       order: 5, enabled: true,
       label: "My Projects",
@@ -63,10 +65,10 @@ export const DATA = {
     { src: "https://wise.com/imaginary-v2/7fb41a2de63ac87465c5903d4f7084cf.jpg?width=1200", alt: "Photo 9" },
   ],
   skills: [
-    { name: "Arduino", icon: (props) => <SimpleIcon icon={siArduino} {...props} /> },
-    { name: "Html", icon: (props) => <SimpleIcon icon={siHtml5} {...props} /> },
-    { name: "Python", icon: (props) => <SimpleIcon icon={siPython} {...props} /> },
-    { name: "Arch Linux", icon: (props) => <SimpleIcon icon={siArchlinux} {...props} /> },
+    { name: "Arduino", icon: (props: SVGProps<SVGSVGElement>) => <SimpleIcon icon={siArduino} {...props} /> },
+    { name: "Html", icon: (props: SVGProps<SVGSVGElement>) => <SimpleIcon icon={siHtml5} {...props} /> },
+    { name: "Python", icon: (props: SVGProps<SVGSVGElement>) => <SimpleIcon icon={siPython} {...props} /> },
+    { name: "Arch Linux", icon: (props: SVGProps<SVGSVGElement>) => <SimpleIcon icon={siArchlinux} {...props} /> },
   ],
   navbar: [
     { href: "/", icon: House, label: "Home" },
@@ -187,37 +189,13 @@ export const DATA = {
   ],
   education: [
     {
-      school: "Founder Fellowship SF",
-      href: "https://foundersfellowship.io",
-      degree: "Cohort 4 - Founder in Residence",
-      logoUrl: "https://avatar.vercel.sh/founder-fellowship?size=40",
-      start: "2023",
-      end: "2023",
-    },
-    {
-      school: "University of British Columbia",
-      href: "https://ubc.ca",
-      degree: "Bachelor of Science, Computer Science",
-      logoUrl: "https://www.google.com/s2/favicons?domain=ubc.ca&sz=128",
-      start: "2018",
-      end: "2023",
-    },
-    {
-      school: "Simon Fraser University",
-      href: "https://sfu.ca",
-      degree: "Bachelor of Business Administration",
-      logoUrl: "https://www.google.com/s2/favicons?domain=sfu.ca&sz=128",
-      start: "2018",
-      end: "2023",
-    },
-    {
-      school: "International Baccalaureate",
-      href: "https://ibo.org",
-      degree: "IB Diploma",
-      logoUrl: "https://www.google.com/s2/favicons?domain=ibo.org&sz=128",
-      start: "2014",
-      end: "2018",
-    },
+      school: "",
+      href: "",
+      degree: "",
+      logoUrl: "",
+      start: "",
+      end: "",
+    }
   ],
   projects: [
     {
@@ -226,7 +204,7 @@ export const DATA = {
       dates: "March 2024 - Present",
       active: true,
       description:
-        "Built an AI-powered code review tool that integrates with GitHub PRs and provides context-aware feedback based on your team's codebase conventions. Used by 300+ engineering teams.",
+        "A Lego Sumo Robot designed and built for competition in 2026. The robot is programmed to push other robots out of the ring using sensors and motors. It is a fun and challenging project that combines robotics, programming, and teamwork. I learned a lot about designing and building robots, as well as programming them to perform specific tasks. The robot is built using Lego Mindstorms and is programmed using block-based programming (Scratch) and Python. I am proud of the robot and the skills I developed during the project. I hope to participate in more robotics competitions in the future and continue to improve my skills. I also want to thank my team member for their support and collaboration throughout the project. It was a great learning experience and I am excited to apply what I learned to future projects.",
       technologies: [
         "Block-based (Scratch)",
         "Python",
@@ -240,7 +218,7 @@ export const DATA = {
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "/example-website.webp",
+      image: "/photos/Lego_sumo.png",
       video: "",
     },
     {
@@ -271,7 +249,7 @@ export const DATA = {
       ],
       image: "photos/Website.png",
       video: "",
-    },    
+    },
   ],
   hackathons: [
     {

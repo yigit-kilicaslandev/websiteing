@@ -11,7 +11,7 @@ const colAspects = [
 ];
 
 export default function PhotosSection() {
-  const photos = DATA.photos;
+  const photos = DATA.photos.filter((photo) => photo.src);
   const col1 = photos.filter((_, i) => i % 3 === 0);
   const col2 = photos.filter((_, i) => i % 3 === 1);
   const col3 = photos.filter((_, i) => i % 3 === 2);
@@ -37,6 +37,8 @@ export default function PhotosSection() {
                   <img
                     src={photo.src}
                     alt={photo.alt}
+                    loading="lazy"
+                    decoding="async"
                     className={`w-full rounded-xl object-cover ${colAspects[colIdx][idx] ?? "aspect-square"}`}
                   />
                 </BlurFade>

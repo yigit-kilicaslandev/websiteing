@@ -1,4 +1,4 @@
-import type { SVGProps } from "react";
+import type { ReactNode, SVGProps } from "react";
 import { Icons } from "@/components/icons";
 import { House, Library } from "lucide-react";
 import { siArduino, siHtml5, siPython, siArchlinux } from "simple-icons/icons";
@@ -224,8 +224,7 @@ export const DATA = {
       href: "https://github.com/yigit-kilicaslandev/websiteing/tree/master",
       dates: "October 2023 - February 2024",
       active: true,
-      description:
-        "A website made by me when I was 10 years old without any help using Astro, TypeScript, and TailwindCSS. It features a blog, and portfolio. The website is fully responsive and optimized for performance.",
+      description: `A website made by me using Astro, TypeScript, and MDX. The website is designed to showcase my projects, skills, and experience. It is a personal portfolio website that I built to demonstrate my web development skills and to provide a platform for sharing my work with others. The website is built using modern web technologies and follows best practices for performance, accessibility, and SEO. I am proud of the website and the skills I developed during the project. I hope to continue improving the website and adding new features in the future. I also want to thank my mentors and peers for their support and feedback throughout the project. It was a great learning experience and I am excited to apply what I learned to future web development projects. I also want to thank the open-source community for their contributions to the tools and libraries I used in building the website. Their work has been invaluable in helping me create a high-quality website. I am always looking for ways to improve my web development skills and stay up-to-date with the latest trends and technologies in the field. I plan to continue learning and experimenting with new tools and frameworks to enhance my website and create even more engaging user experiences. I also want to share my knowledge and experiences with others in the web development community, whether through blog posts, tutorials, or open-source contributions. Overall, building this website has been a rewarding experience that has allowed me to grow as a developer and showcase my abilities to potential employers and collaborators. Plus, it has given me the opportunity to reflect on my journey as a software engineer and the skills I have acquired along the way. I am excited to see where this project will take me in the future and how it will continue to evolve as I learn and grow in my career.`,
       technologies: [
         "TypeScript",
         "Astro",
@@ -251,13 +250,13 @@ export const DATA = {
   ],
   hackathons: [
     {
-      title: "Lego Sumo Robot Competition",
+      title: "Lego Sumo Robotex Robot Competition",
       dates: "2026",
       location: "Marmara İstanbul",
       description: "Made a Lego Sumo Robot that can push other robots out of the ring. It was a fun and challenging experience to design and program the robot to compete against other teams. I learned a lot about robotics, programming, and teamwork. I also won the competition and received a trophy for my achievement. I was proud of my robot and the skills I developed during the competition. I hope to participate in more robotics competitions in the future and continue to improve my skills. I also want to thank my team members for their support and collaboration throughout the project. It was a great learning experience and I am excited to apply what I learned to future projects.",
       image: "https://1000logos.net/wp-content/uploads/2017/03/Lego-Logo-1972.png",
       win: "Best Infrastructure Hack",
-      links: [],
+      links: [] as { href: string; title: string; icon: ReactNode }[],
     },
   ],
 } as const;

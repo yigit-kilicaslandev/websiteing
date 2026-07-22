@@ -58,9 +58,10 @@ export const DATA = {
     { src: "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWklzUh-xqt3DjMPErYaZYJnNBhfPV83qxsKgGFs7c5ewEJnlIZUJegrMyNexgv-Mj58w_gu9pwvsTMcfPtm8IflVZdAykFvhwxM2OoJsZ4iXW5eRrJCktCVZB_sIpRnU4GWIhUN=w1080-h624-n-k-no", alt: "Photo 2" },
     { src: "https://cdn2.setur.com.tr/image/tour/large/yurt-disi-392cfeff-6045-46f4-aa29-c02769e7b2a3.jpg", alt: "Photo 3" },
     { src: "https://wise.com/imaginary-v2/7fb41a2de63ac87465c5903d4f7084cf.jpg?width=1200", alt: "Photo 4" },
-    { src: "", alt: "Photo 5" },
-    { src: "", alt: "Photo 6" },
-    { src: "", alt: "Photo 7" },
+// Additional photos can be added here if needed 
+//    { src: "", alt: "Photo 5" },
+//   { src: "", alt: "Photo 6" },
+//   { src: "", alt: "Photo 7" },
   ],
   skills: [
     { name: "Arduino", icon: (props: SVGProps<SVGSVGElement>) => <SimpleIcon icon={siArduino} {...props} /> },

@@ -28,7 +28,7 @@ export const DATA = {
     about: { order: 1, enabled: true, heading: "About" },
     work: { order: 2, enabled: false, heading: "Work Experience", presentLabel: "Present" },
   // Enable education section and set order to 2 later in the code
-    education: { order: 2, enabled: false, heading: "Education" },
+    education: { order: 2, enabled: true, heading: "Education" },
     skills: { order: 3, enabled: true, heading: "Skills" },
     projects: {
       order: 5, enabled: true,
@@ -187,12 +187,12 @@ export const DATA = {
   ],
   education: [
     {
-      school: "",
-      href: "",
-      degree: "",
-      logoUrl: "",
-      start: "",
-      end: "",
+      school: "Bilnet Schools",
+      href: "https://bilnetschools.com",
+      degree: "Middle School",
+      logoUrl: "https://www.google.com/s2/favicons?domain=bilnetschools.com&sz=128",
+      start: "2015",
+      end: "2019",
     }
   ],
   projects: [

@@ -54,11 +54,11 @@ export const DATA = {
     },
   },
   photos: [
-    { src: "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcQgMZvQNOE6XUxmgZJ6XejBJqhwz8ElMSCQK__vAtOGV5W9NL6QgVFVLuTBvZCnoNGe6umM2bMh6XxB7FIbecak7QA&s=19", alt: "Photo 1" },
-    { src: "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWklzUh-xqt3DjMPErYaZYJnNBhfPV83qxsKgGFs7c5ewEJnlIZUJegrMyNexgv-Mj58w_gu9pwvsTMcfPtm8IflVZdAykFvhwxM2OoJsZ4iXW5eRrJCktCVZB_sIpRnU4GWIhUN=w1080-h624-n-k-no", alt: "Photo 2" },
+    { src: "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbnt:ANd9GcQgMZvQNOE6XUxmgZJ6XejBJqhwz8ElMSCQK__vAtOGV5W9NL6QgVFVLuTBvZCnoNGe6umM2bMh6XxB7FIbecak7QA&s=19", alt: "Photo 1" },
+    { src: "https://wise.com/imaginary-v2/7fb41a2de63ac87465c5903d4f7084cf.jpg?width=1200", alt: "Photo 2" },
     { src: "https://cdn2.setur.com.tr/image/tour/large/yurt-disi-392cfeff-6045-46f4-aa29-c02769e7b2a3.jpg", alt: "Photo 3" },
-    { src: "https://wise.com/imaginary-v2/7fb41a2de63ac87465c5903d4f7084cf.jpg?width=1200", alt: "Photo 4" },
-// Additional photos can be added here if needed 
+    { src: "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkQGm19KJwkix9wBW8APe8cdJOkHWxxH0tJF6OjCBxJ3EB8RPx1PaXzPXMxKrjEdGBC3jbVjF1NvBMLlS1IiBZH48hhbFbaAgtN5x0pu56oTGdSTsmSUIiurihy-91ADA16o3K5=s1360-w1360-h1020-rw", alt: "Photo 4" },
+// Additional photos can be added here if needed
 //    { src: "", alt: "Photo 5" },
 //   { src: "", alt: "Photo 6" },
 //   { src: "", alt: "Photo 7" },

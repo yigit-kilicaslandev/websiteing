@@ -199,7 +199,7 @@ export const DATA = {
       school: "Bilnet Schools",
       href: "https://bilnetschools.com",
       degree: "Middle School",
-      logoUrl: "https://www.google.com/s2/favicons?domain=bilnetschools.com&sz=128",
+      logoUrl: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fplay-lh.googleusercontent.com%2FyHzq7VqQVOAqdD2EbYnBdrB9GCNmFe-AFFcjLTogdO1ASupyGcEcphFEfKjlKnzLIj7P&f=1&nofb=1&ipt=74475c4f836a8c6ad14fec37d4be7a176a406b2dd6d2e9f777ccf7c659f3c909",
       start: "2024",
       end: "2028",
     }

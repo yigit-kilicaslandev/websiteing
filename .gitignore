@@ -31,4 +31,5 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 
+# pnpm workspace file because it breaks cloudflare workers build
 pnpm-workspace.yaml

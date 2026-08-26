@@ -187,13 +187,21 @@ export const DATA = {
     },
   ],
   education: [
+        {
+      school: "TED College",
+      href: "https://ted.org.tr/en/",
+      degree: "Elementary School",
+      logoUrl: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fw7.pngwing.com%2Fpngs%2F705%2F605%2Fpng-transparent-ted-university-ted-ankara-college-foundation-schools-ted-istanbul-college-turkish-education-association-school-emblem-logo-university.png&f=1&nofb=1&ipt=928dda66bcf1927c63f4a9b05144618c8d1fc7b97f13122a05f0f2726e4f67e2",
+      start: "2018",
+      end: "2024",
+    },
     {
       school: "Bilnet Schools",
       href: "https://bilnetschools.com",
       degree: "Middle School",
       logoUrl: "https://www.google.com/s2/favicons?domain=bilnetschools.com&sz=128",
-      start: "2015",
-      end: "2019",
+      start: "2024",
+      end: "2028",
     }
   ],
   projects: [

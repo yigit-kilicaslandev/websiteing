@@ -1,8 +1,8 @@
 {
-  "name": "starfolio",
+  "name": "my-portfolio",
   "type": "module",
-  "description": "Starfolio - Create a personal or professional portfolio site just from a single config file. Built with Astro.",
-  "author": "websiterating",
+  "description": "Yiğit Kılıçaslan's personal portfolio site built with Astro.",
+  "author": "Yiğit Kılıçaslan",
   "version": "0.0.1",
   "engines": {
     "node": ">=22.12.0"

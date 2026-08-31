@@ -95,12 +95,12 @@ export const DATA = {
           name: "X",
           url: "https://x.com",
           icon: Icons.x,            
-          navbar: false,
+          navbar: true,
 
         },
       Youtube: {
           name: "Youtube",
-          url: "https://youtube.com",            
+          url: "https://youtube.com",
           icon: Icons.youtube,
           navbar: false,
         },

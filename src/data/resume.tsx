@@ -1,6 +1,6 @@
 import type { ReactNode, SVGProps } from "react";
 import { Icons } from "@/components/icons";
-import { House, Library } from "lucide-react";
+import { House, Library, Twitter } from "lucide-react";
 import { siArduino, siHtml5, siPython, siArchlinux } from "simple-icons/icons";
 
 const SimpleIcon = ({ icon, className }: { icon: { svg: string }; className?: string }) => (
@@ -72,6 +72,7 @@ export const DATA = {
   navbar: [
     { href: "/", icon: House, label: "Home" },
     { href: "/blog", icon: Library, label: "Blog" },
+    { href: "https://x.com/ygtdev00", icon: Twitter, label: "Twitter" },
   ],
   contact: {
     email: "contact@yigitkilicaslan.com",

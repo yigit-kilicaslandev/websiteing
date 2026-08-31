@@ -1,38 +1,57 @@
 ---
-title: "JavaScript Async/Await: Promises Without the Pain"
-publishedAt: "2025-01-28"
-updatedAt: "2025-01-28"
-author: "Alex Mercer"
-summary: "Ditch callback hell for good - a practical walkthrough of async/await, error handling, and parallel execution patterns."
+title: "How I Built My Personal Portfolio — From Fork to Production"
+publishedAt: "2026-08-31"
+updatedAt: "2026-08-31"
+author: "Yiğit Kılıçaslan"
+summary: "How I leveraged open-source to build a stunning portfolio site with custom features and modern web tech."
 image: "https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=800&h=192&fit=crop"
 ---
 
-# Git Workflow Guide: From Chaos to Clarity
+# How I Built My Personal Portfolio — From Fork to Production
 
-Git is powerful, but teams usually struggle because they don’t agree on a few basics. A simple workflow keeps history readable, reviews focused, and releases less stressful.
+Building a personal website doesn't have to start from scratch. By strategically forking an existing open-source project, I was able to focus on what truly matters — **customization, content, and standing out**.
 
-This is a lightweight guide you can adopt in a day and iterate on later.
+## Why I Forked Instead of Starting from Zero
 
-## A simple team workflow
+The smartest developers know that reinventing the wheel is rarely the best use of time. I found a modern, well-architected portfolio template built with **Astro, TypeScript, and Tailwind CSS** — and forked it to use as my foundation.
 
-- Branch from `main` for every change.
-- Keep branches small and short-lived.
-- Open a pull request early and ask for review.
-- Merge back to `main` once tests pass.
+This gave me:
+- A battle-tested architecture with optimized performance
+- Modern tooling (Astro's island architecture, MDX for content)
+- A clean, responsive design out of the box
 
-## Commit message tips
+## The Power of `resume.tsx`
 
-- Start with a clear verb (“add”, “fix”, “remove”, “refactor”).
-- Keep the first line short and specific.
-- Prefer multiple small commits over one giant “WIP”.
+The real magic happened in `resume.tsx` — the single source of truth for my entire site. One file controls everything: my bio, work experience, education, skills, projects, and contact information.
 
-## PR checklist
+Here's what I did:
+- **Refactored the data layer** to showcase my projects and competitions
+- **Integrated custom icon libraries** (Simple Icons, Lucide) for a polished look
+- **Added social integrations** — GitHub, LinkedIn, X (Twitter), and YouTube
+- **Configured section ordering** to highlight what matters most
+- **Renamed components** — The original template had a "Hackintosh" project reference. I rebranded it with a custom name while keeping the internal file references (`hakintosh`) intact for backward compatibility
 
-1. Explain what changed and why.
-2. Link the issue or describe the user impact.
-3. Add tests (or explain why not).
-4. Keep the diff small enough to review quickly.
+## Tech Stack Highlights
 
-## Wrap-up
+| Technology | Purpose |
+|------------|---------|
+| Astro | Static site generation with island architecture |
+| TypeScript | Type-safe data structures and components |
+| MDX | Rich blog content with component support |
+| Tailwind CSS | Utility-first styling for rapid development |
+| Lucide Icons | Clean, consistent iconography |
 
-The goal isn’t “perfect Git” - it’s fewer surprises and faster collaboration. Start simple, write down the rules, and improve them as your team grows.
+## Key Takeaways
+
+1. **Fork strategically** — Choose a project with solid architecture and an active community
+2. **Customize deeply** — Don't just change colors; refactor the data model and add your own features
+3. **Keep content in one place** — The `resume.tsx` pattern makes updates trivial
+4. **Deploy with confidence** — Astro's static output means zero server costs and instant page loads
+
+## What's Next
+
+I'm continuing to iterate on the site — adding more projects, refining the design, and building out the blog section. The fork gave me a head start, but the **customization** is what makes it mine.
+
+---
+
+*Built with Astro, TypeScript, and a healthy respect for open-source.*

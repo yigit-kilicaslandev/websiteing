@@ -72,7 +72,6 @@ export const DATA = {
   navbar: [
     { href: "/", icon: House, label: "Home" },
     { href: "/blog", icon: Library, label: "Blog" },
-    { href: "https://x.com/ygtdev00", icon: X, label: "Twitter" },
   ],
   contact: {
     email: "contact@yigitkilicaslan.com",

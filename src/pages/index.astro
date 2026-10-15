@@ -5,5 +5,20 @@ import HomePage from "@/components/HomePage";
 ---
 
 <Layout>
+  <script is:inline>
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      document.documentElement.setAttribute("data-entrance-pending", "");
+      // Leave the page readable if hydration or a third-party request stalls.
+      window.setTimeout(() => {
+        document.documentElement.removeAttribute("data-entrance-pending");
+      }, 4000);
+    }
+  </script>
   <HomePage client:load />
 </Layout>
+
+<style is:global>
+  html[data-entrance-pending] [data-entrance] {
+    opacity: 0 !important;
+  }
+</style>

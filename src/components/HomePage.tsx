@@ -129,7 +129,7 @@ const sectionComponents: Record<string, React.ReactNode> = {
 };
 
 export default function HomePage() {
-  // Keep the server-rendered page visible while the browser restores its scroll.
+  // Keep the server-rendered layout in place while the browser restores scroll.
   const [entrance, setEntrance] = useState({ play: false, scrollY: 0 });
 
   useEffect(() => {
@@ -137,7 +137,8 @@ export default function HomePage() {
     const checkStartingPosition = () => {
       frame = requestAnimationFrame(() => {
         const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-        setEntrance({ play: !reducedMotion, scrollY: window.scrollY });
+        const pending = document.documentElement.hasAttribute("data-entrance-pending");
+        setEntrance({ play: pending && !reducedMotion, scrollY: window.scrollY });
       });
     };
 
@@ -150,6 +151,15 @@ export default function HomePage() {
       window.removeEventListener("pageshow", checkStartingPosition);
     };
   }, []);
+
+  useEffect(() => {
+    if (!entrance.play) return;
+    // Let Motion apply its hidden styles before removing the first-paint guard.
+    const frame = requestAnimationFrame(() => {
+      document.documentElement.removeAttribute("data-entrance-pending");
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [entrance.play]);
 
   const orderedSections = Object.entries(DATA.sections)
     .filter(([, s]) => s.enabled)

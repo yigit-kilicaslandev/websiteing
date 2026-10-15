@@ -37,7 +37,7 @@ const BlurFadeText = ({
 
   if (animateByCharacter) {
     return (
-      <div ref={ref} className="flex">
+      <div ref={ref} data-entrance="" className="flex">
         {characters.map((char, i) => {
           return (
             <motion.span
@@ -58,7 +58,7 @@ const BlurFadeText = ({
   }
 
   return (
-    <div ref={ref} className="flex">
+    <div ref={ref} data-entrance="" className="flex">
       <motion.span
         initial="visible"
         animate={controls}

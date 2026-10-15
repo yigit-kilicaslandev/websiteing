@@ -41,6 +41,7 @@ const BlurFade = ({
   const controls = useEntranceAnimation(ref, duration, 0.04 + delay, combinedVariants, isInView);
   return (
     <motion.div
+      data-entrance=""
       ref={ref}
       initial="visible"
       animate={controls}

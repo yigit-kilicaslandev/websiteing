@@ -1,4 +1,4 @@
-import { motion, useInView, type Variants } from "motion/react";
+import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 import { useEntranceAnimation } from "./entrance-animation";
 
@@ -28,29 +28,23 @@ const BlurFade = ({
   blur = "6px",
 }: BlurFadeProps) => {
   const ref = useRef<HTMLDivElement>(null);
-  const { playEntrance, timing } = useEntranceAnimation(ref, duration, 0.04 + delay);
   const inViewResult = useInView(ref, {
     once: true,
     ...(inViewMargin ? { margin: inViewMargin as any } : {})
   });
   const isInView = !inView || inViewResult;
-  const defaultVariants: Variants = {
+  const defaultVariants = {
     hidden: { y: -yOffset, opacity: 0, filter: `blur(${blur})` },
     visible: { y: 0, opacity: 1, filter: `blur(0px)` },
   };
   const combinedVariants = variant || defaultVariants;
+  const controls = useEntranceAnimation(ref, duration, 0.04 + delay, combinedVariants, isInView);
   return (
     <motion.div
-      key={playEntrance ? "animated" : "immediate"}
       ref={ref}
-      initial={playEntrance ? "hidden" : false}
-      animate={!playEntrance || isInView ? "visible" : "hidden"}
+      initial="visible"
+      animate={controls}
       variants={combinedVariants}
-      transition={{
-        delay: playEntrance ? timing.delay : 0,
-        duration: playEntrance ? timing.duration : 0,
-        ease: "easeOut",
-      }}
       className={className}
     >
       {children}

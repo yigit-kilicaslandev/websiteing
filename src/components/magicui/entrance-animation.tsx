@@ -1,4 +1,5 @@
-import { createContext, useContext, useLayoutEffect, useState, type RefObject } from "react";
+import { useAnimationControls, type TargetAndTransition } from "motion/react";
+import { createContext, useContext, useLayoutEffect, useRef, type RefObject } from "react";
 
 export const EntranceAnimationContext = createContext({ play: true, scrollY: 0 });
 
@@ -27,19 +28,41 @@ export function useEntranceAnimation(
   ref: RefObject<HTMLElement | null>,
   duration: number,
   delay: number,
+  variants: { hidden: TargetAndTransition; visible: TargetAndTransition },
+  enabled = true,
+  characterDelay = 0,
 ) {
   const { play, scrollY } = useContext(EntranceAnimationContext);
-  const [position, setPosition] = useState({ top: 0, bottom: 0, viewportHeight: 1 });
+  const controls = useAnimationControls();
+  const variantsRef = useRef(variants);
+  variantsRef.current = variants;
 
   useLayoutEffect(() => {
-    if (!play || !ref.current) return;
-    const { top, bottom } = ref.current.getBoundingClientRect();
-    setPosition({ top, bottom, viewportHeight: window.innerHeight });
-  }, [play, scrollY, ref]);
+    if (!ref.current) return;
+    if (!play) {
+      controls.set(variantsRef.current.visible);
+      return;
+    }
+    if (!enabled) {
+      controls.set(variantsRef.current.hidden);
+      return;
+    }
 
-  return {
-    playEntrance: play,
-    fastForward: scrollY > 0 && position.bottom <= 0,
-    timing: getEntranceTiming(duration, delay, scrollY, position.top, position.bottom, position.viewportHeight),
-  };
+    // Measure the existing element before starting; never remount its content.
+    const { top, bottom } = ref.current.getBoundingClientRect();
+    const timing = getEntranceTiming(duration, delay, scrollY, top, bottom, window.innerHeight);
+    const fastForward = scrollY > 0 && bottom <= 0;
+    controls.set(variantsRef.current.hidden);
+    void controls.start((index = 0) => ({
+      ...variantsRef.current.visible,
+      transition: {
+        ...timing,
+        delay: timing.delay + (fastForward ? 0 : index * characterDelay),
+        ease: "easeOut",
+      },
+    }));
+    return () => controls.stop();
+  }, [play, scrollY, ref, controls, duration, delay, enabled, characterDelay]);
+
+  return controls;
 }

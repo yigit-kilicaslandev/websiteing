@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { motion, type Variants } from "motion/react";
+import { motion } from "motion/react";
 import { useMemo, useRef } from "react";
 import { useEntranceAnimation } from "./entrance-animation";
 
@@ -27,33 +27,25 @@ const BlurFadeText = ({
   animateByCharacter = false,
 }: BlurFadeTextProps) => {
   const ref = useRef<HTMLDivElement>(null);
-  const { playEntrance, fastForward, timing } = useEntranceAnimation(ref, duration, delay);
-  const defaultVariants: Variants = {
+  const defaultVariants = {
     hidden: { y: -yOffset, opacity: 0, filter: "blur(8px)" },
     visible: { y: 0, opacity: 1, filter: "blur(0px)" },
   };
   const combinedVariants = variant || defaultVariants;
+  const controls = useEntranceAnimation(ref, duration, delay, combinedVariants, true, animateByCharacter ? characterDelay : 0);
   const characters = useMemo(() => Array.from(text), [text]);
 
   if (animateByCharacter) {
     return (
       <div ref={ref} className="flex">
         {characters.map((char, i) => {
-          const charVariants: Variants = {
-            hidden: { y: -yOffset, opacity: 0, filter: "blur(8px)" },
-            visible: { y: 0, opacity: 1, filter: "blur(0px)" },
-          };
           return (
             <motion.span
-              key={`${playEntrance}-${i}`}
-              initial={playEntrance ? "hidden" : false}
-              animate="visible"
-              variants={charVariants}
-              transition={{
-                duration: playEntrance ? timing.duration : 0,
-                delay: playEntrance ? timing.delay + (fastForward ? 0 : i * characterDelay) : 0,
-                ease: "easeOut",
-              }}
+              key={i}
+              custom={i}
+              initial="visible"
+              animate={controls}
+              variants={combinedVariants}
               className={cn("inline-block", className)}
               style={{ width: char.trim() === "" ? "0.2em" : "auto" }}
             >
@@ -68,15 +60,9 @@ const BlurFadeText = ({
   return (
     <div ref={ref} className="flex">
       <motion.span
-        key={playEntrance ? "animated" : "immediate"}
-        initial={playEntrance ? "hidden" : false}
-        animate="visible"
+        initial="visible"
+        animate={controls}
         variants={combinedVariants}
-        transition={{
-          duration: playEntrance ? timing.duration : 0,
-          delay: playEntrance ? timing.delay : 0,
-          ease: "easeOut",
-        }}
         className={cn("inline-block", className)}
       >
         {text}

@@ -45,7 +45,7 @@ Now you can change something and see it update! Press **Ctrl + C** in the termin
 
 Maybe start by changing a word in my bio and see if it shows up on the website.
 
-## To check the finished build
+## Try the finished site
 
 Run `pnpm build`, then `pnpm preview` to see the built website on your own computer.
 

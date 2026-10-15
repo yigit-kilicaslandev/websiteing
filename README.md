@@ -2,7 +2,7 @@
 
 Hey, I'm Yiğit! This is my site for projects, travel photos, competitions, and my blog.
 
-I started it in 2026 when I was 10. It began as a Starfolio fork, and I'm changing it to make it mine. I'm still tryna learn the code, but it's fun when my changes actually work!
+I started it in 2026, when I was 10, by forking Starfolio. I'm still tryna learn the code, but it's fun when my changes work!
 
 ## [Come check it out!](https://yigitkilicaslan.com)
 

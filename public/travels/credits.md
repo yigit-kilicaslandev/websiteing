@@ -1,6 +1,10 @@
 # Travel photo credits
 
-Photos are cropped to fit the gallery. Dubai, Santorini and Belgium were also resized and JPEG-compressed. Adapted CC BY-SA photos remain available under their respective linked licenses.
+I didn't take these photos myself. These are the photographers who took them, with links to the original pictures and their licenses. Thanks for sharing your photos!
+
+The gallery crops the pictures to fit. The Dubai, Santorini and Belgium pictures were also made smaller and saved as compressed JPEGs so they load faster and fit Cloudflare's file limit.
+
+The cropped versions of the CC BY-SA photos use the same licenses as the originals, linked below.
 
 - **Barcelona, Spain**: Photo by [Joaquim Gaspar (Alvesgaspar)](https://commons.wikimedia.org/wiki/File:Barcelona_March_2015-2b.jpg). License: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
 - **Paris, France**: Photo by [Benh LIEU SONG](https://commons.wikimedia.org/wiki/File:Tour_Eiffel_Wikimedia_Commons.jpg). License: [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).

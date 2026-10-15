@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { EntranceAnimationContext } from "@/components/magicui/entrance-animation";
 import { BackToTop } from "@/components/back-to-top";
 import BlurFade from "@/components/magicui/blur-fade";
@@ -130,16 +130,14 @@ const sectionComponents: Record<string, React.ReactNode> = {
 
 export default function HomePage() {
   // Keep the server-rendered page visible while the browser restores its scroll.
-  const [playEntrance, setPlayEntrance] = useState(false);
-  const nameRef = useRef<HTMLDivElement>(null);
+  const [entrance, setEntrance] = useState({ play: false, scrollY: 0 });
 
   useEffect(() => {
     let frame = 0;
     const checkStartingPosition = () => {
       frame = requestAnimationFrame(() => {
-        const name = nameRef.current?.getBoundingClientRect();
         const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-        setPlayEntrance(Boolean(name && name.bottom > 0 && name.top < window.innerHeight && !reducedMotion));
+        setEntrance({ play: !reducedMotion, scrollY: window.scrollY });
       });
     };
 
@@ -159,13 +157,13 @@ export default function HomePage() {
     .map(([key]) => key);
 
   return (
-    <EntranceAnimationContext.Provider value={playEntrance}>
+    <EntranceAnimationContext.Provider value={entrance}>
       <main className="min-h-dvh flex flex-col gap-14 relative">
         <section id="hero">
           <div className="mx-auto w-full max-w-2xl space-y-8">
             <div className="gap-2 gap-y-6 flex flex-col md:flex-row justify-between">
               <div className="gap-2 flex flex-col order-2 md:order-1">
-                <div ref={nameRef}>
+                <div>
                   <BlurFadeText
                     delay={BLUR_FADE_DELAY}
                     className="text-3xl font-semibold tracking-tighter sm:text-4xl lg:text-5xl"

@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import { motion, type Variants } from "motion/react";
-import { useMemo } from "react";
+import { useMemo, useRef } from "react";
 import { useEntranceAnimation } from "./entrance-animation";
 
 interface BlurFadeTextProps {
@@ -26,7 +26,8 @@ const BlurFadeText = ({
   yOffset = 8,
   animateByCharacter = false,
 }: BlurFadeTextProps) => {
-  const playEntrance = useEntranceAnimation();
+  const ref = useRef<HTMLDivElement>(null);
+  const { playEntrance, fastForward, timing } = useEntranceAnimation(ref, duration, delay);
   const defaultVariants: Variants = {
     hidden: { y: -yOffset, opacity: 0, filter: "blur(8px)" },
     visible: { y: 0, opacity: 1, filter: "blur(0px)" },
@@ -36,7 +37,7 @@ const BlurFadeText = ({
 
   if (animateByCharacter) {
     return (
-      <div className="flex">
+      <div ref={ref} className="flex">
         {characters.map((char, i) => {
           const charVariants: Variants = {
             hidden: { y: -yOffset, opacity: 0, filter: "blur(8px)" },
@@ -49,8 +50,8 @@ const BlurFadeText = ({
               animate="visible"
               variants={charVariants}
               transition={{
-                duration: playEntrance ? duration : 0,
-                delay: playEntrance ? delay + i * characterDelay : 0,
+                duration: playEntrance ? timing.duration : 0,
+                delay: playEntrance ? timing.delay + (fastForward ? 0 : i * characterDelay) : 0,
                 ease: "easeOut",
               }}
               className={cn("inline-block", className)}
@@ -65,15 +66,15 @@ const BlurFadeText = ({
   }
 
   return (
-    <div className="flex">
+    <div ref={ref} className="flex">
       <motion.span
         key={playEntrance ? "animated" : "immediate"}
         initial={playEntrance ? "hidden" : false}
         animate="visible"
         variants={combinedVariants}
         transition={{
-          duration: playEntrance ? duration : 0,
-          delay: playEntrance ? delay : 0,
+          duration: playEntrance ? timing.duration : 0,
+          delay: playEntrance ? timing.delay : 0,
           ease: "easeOut",
         }}
         className={cn("inline-block", className)}

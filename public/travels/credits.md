@@ -1,6 +1,6 @@
 # Travel photo credits
 
-Photos are cropped to fit the gallery. Dubai and Santorini were also resized and JPEG-compressed. Adapted CC BY-SA photos remain available under their respective linked licenses.
+Photos are cropped to fit the gallery. Dubai, Santorini and Belgium were also resized and JPEG-compressed. Adapted CC BY-SA photos remain available under their respective linked licenses.
 
 - **Barcelona, Spain**: Photo by [Joaquim Gaspar (Alvesgaspar)](https://commons.wikimedia.org/wiki/File:Barcelona_March_2015-2b.jpg). License: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
 - **Paris, France**: Photo by [Benh LIEU SONG](https://commons.wikimedia.org/wiki/File:Tour_Eiffel_Wikimedia_Commons.jpg). License: [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/).
@@ -13,3 +13,4 @@ Photos are cropped to fit the gallery. Dubai and Santorini were also resized and
 - **Venice, Italy**: Photo by [Martin Falbisoner](https://commons.wikimedia.org/wiki/File:Panorama_of_Canal_Grande_and_Ponte_di_Rialto%2C_Venice_-_September_2017.jpg). License: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 - **Florence, Italy**: Photo by [Livioandronico2013](https://commons.wikimedia.org/wiki/File:Dome_of_Cattedrale_di_Santa_Maria_del_Fiore_%28Florence%29.jpg). License: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 - **Santorini, Greece**: Photo by [Ryan Spencer](https://unsplash.com/photos/XGKaRnWjv1c). License: [Unsplash License](https://unsplash.com/license).
+- **Brussels, Belgium**: Photo by [Alex Vasey](https://unsplash.com/photos/v5j_fxYUwaI). License: [Unsplash License](https://unsplash.com/license).

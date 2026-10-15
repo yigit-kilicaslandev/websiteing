@@ -77,6 +77,7 @@ export const DATA = {
     { src: "https://upload.wikimedia.org/wikipedia/commons/1/17/Panorama_of_Canal_Grande_and_Ponte_di_Rialto%2C_Venice_-_September_2017.jpg", alt: "Venice, Italy" },
     { src: "https://upload.wikimedia.org/wikipedia/commons/a/a0/Dome_of_Cattedrale_di_Santa_Maria_del_Fiore_%28Florence%29.jpg", alt: "Florence, Italy" },
     { src: "/travels/santorini.jpg", alt: "Whitewashed steps overlooking the sea in Oia, Santorini, Greece" },
+    { src: "/travels/belgium.jpg", alt: "Grand Place in Brussels, Belgium" },
   ],
   skills: [
     { name: "Arduino", icon: (props: SVGProps<SVGSVGElement>) => <SimpleIcon icon={siArduino} {...props} /> },

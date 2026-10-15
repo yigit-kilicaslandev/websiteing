@@ -75,7 +75,14 @@ export const PHOTO_CREDITS = [
     "source": "https://unsplash.com/photos/XGKaRnWjv1c",
     "license": "Unsplash License",
     "licenseUrl": "https://unsplash.com/license"
+  },
+  {
+    "place": "Brussels, Belgium",
+    "author": "Alex Vasey",
+    "source": "https://unsplash.com/photos/v5j_fxYUwaI",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license"
   }
 ] as const;
 
-export const PHOTO_CHANGES = "Photos are cropped to fit the gallery. Dubai and Santorini were also resized and JPEG-compressed. Adapted CC BY-SA photos remain available under their respective linked licenses.";
+export const PHOTO_CHANGES = "Photos are cropped to fit the gallery. Dubai, Santorini and Belgium were also resized and JPEG-compressed. Adapted CC BY-SA photos remain available under their respective linked licenses.";

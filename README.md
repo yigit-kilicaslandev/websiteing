@@ -55,7 +55,7 @@ Save a change to a file and watch the browser update! When you're finished, pres
 - **Pictures:** `public/`
 - **Website styles:** `src/styles/global.css`
 
-Start small: change a sentence in your bio, save the file, and see what happens.
+Test it: change a sentence in your bio, save the file, and see what happens.
 
 ## Check the finished website
 

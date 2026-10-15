@@ -2,7 +2,7 @@
 
 I didn't take these photos myself. These are the photographers who took them, with links to the original pictures and their licenses. Thanks for sharing your photos!
 
-The gallery crops the pictures to fit. The Dubai, Santorini and Belgium pictures were also made smaller and saved as compressed JPEGs so they load faster and fit Cloudflare's file limit.
+The gallery crops the pictures to fit. The photos stored on this site were also resized and saved as compressed JPEGs. There are smaller copies for phones too, so you don't have to download huge pictures just to see the gallery.
 
 The cropped versions of the CC BY-SA photos use the same licenses as the originals, linked below.
 

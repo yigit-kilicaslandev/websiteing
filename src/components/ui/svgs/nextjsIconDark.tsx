@@ -16,7 +16,7 @@ const NextjsIconDark = (props: SVGProps<SVGSVGElement>) => (
     <g mask="url(#:r8:mask0_408_134)">
       <circle cx="90" cy="90" data-circle="true" fill="black" r="90" />
       <path
-        d="M149.508 157.52L69.142 54H54V125.97H66.1136V69.3836L139.999 164.845C143.333 162.614 146.509 160.165 149.508 157.52Z"
+        d="M149.508 157.52 69.142 54H54v71.97h12.114V69.384l73.885 95.461a90 90 0 0 0 9.509-7.325"
         fill="url(#:r8:paint0_linear_408_134)"
       />
       <rect

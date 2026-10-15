@@ -37,6 +37,12 @@ export default function PhotosSection() {
                 <BlurFade key={photo.src} delay={BLUR_FADE_DELAY * 14 + (colIdx * col.length + idx) * 0.05}>
                   <img
                     src={photo.src}
+                    srcSet={photo.src.startsWith("/travels/")
+                      ? `${photo.src.replace(".jpg", "-480.jpg")} 480w, ${photo.src.replace(".jpg", "-768.jpg")} 768w`
+                      : undefined}
+                    sizes={photo.src.startsWith("/travels/")
+                      ? "(min-width: 640px) 250px, calc((100vw - 40px) / 2)"
+                      : undefined}
                     alt={photo.alt}
                     loading="lazy"
                     decoding="async"

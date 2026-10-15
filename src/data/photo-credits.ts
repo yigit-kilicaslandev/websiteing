@@ -85,4 +85,4 @@ export const PHOTO_CREDITS = [
   }
 ] as const;
 
-export const PHOTO_CHANGES = "Photos are cropped to fit the gallery. Dubai, Santorini and Belgium were also resized and JPEG-compressed. Adapted CC BY-SA photos remain available under their respective linked licenses.";
+export const PHOTO_CHANGES = "Photos are cropped to fit the gallery. Locally stored photos were also resized and JPEG-compressed, with smaller versions for different screen sizes. Adapted CC BY-SA photos remain available under their respective linked licenses.";

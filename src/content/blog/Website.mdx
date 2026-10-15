@@ -3,42 +3,36 @@ title: "How I made my website"
 publishedAt: "2026-08-31"
 updatedAt: "2026-10-15"
 author: "Yiğit Kılıçaslan"
-summary: "I wanted a website for my projects, so I started with Starfolio and changed it. Here's what I've added and a few things that broke."
+summary: "I made a website for my projects. Well, I started with a template. Here's what I changed and what broke along the way."
 image: "https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=800&h=192&fit=crop"
 ---
 
 # How I made my website
 
-Hi, I'm Yiğit. I'm 11 and this is my website. I started it when I was 10, in 2026. I didn't have loads of projects to put on it, but I still wanted somewhere to share the things I make.
+I'm 11 and I wanted my own website to put my projects on. I started it in 2026 when I was 10. There weren't many projects to add yet, but now the website is one of them lol.
 
-The website itself counts as a project too, so that helped.
+I didn't make the whole thing from scratch. I forked [Starfolio](https://github.com/webrating/starfolio) on GitHub and started changing the example stuff to my own information. The design was already there, which helped a lot.
 
-## Where I started
+## What I changed
 
-I used a template called [Starfolio](https://github.com/webrating/starfolio). I forked it on GitHub, which means I made my own copy that I could change.
+There's a file called `resume.tsx` with my name, schools, projects and other information in it. Most of my changes started there. I added my Lego sumo robot, the competitions I've joined and this website.
 
-So I didn't write everything from zero. The layout was already there. I changed it to have my information, schools, projects and robot competitions instead of the example stuff.
+Then I added travel pictures and the icons in the skills section. I ended up removing some skills too. Just because the website uses React and TypeScript doesn't mean I know them well enough to put them on my list.
 
-## Making it mine
+I use AI to help with the code. I'm still learning, and being able to change my information in a file isn't the same as knowing how every part of the website works.
 
-Most of my information is in a file called `src/data/resume.tsx`. That's where I can add a project or change my bio without searching through every page.
+## A few things went wrong
 
-I added my Lego sumo robot and this website to the projects. I also added a travel photo section and icons for the languages and tools I use. Picking the icons was a small thing, but I like seeing them all together.
+The X icon broke because the icon library didn't export the one we were trying to use. The dark mode button also got stuck showing the sun, even in light mode. The moon icon was there, just hidden all the time.
 
-The site uses Astro, TypeScript and Tailwind CSS. These blog posts are MDX files. For this post I'm mostly just writing text in one of those files.
+The Dubai and Santorini photos were too big for Cloudflare. It has a 25 MiB limit for each file, and both were over it, so the build failed. We replaced them with smaller photos. I wouldn't have guessed two pictures could stop the whole build.
 
-## Things broke too
+The travel photos are from other photographers, so there's a credits section under the gallery now. Some of the licenses require it.
 
-I had to fix the X icon because the one I tried to use wasn't exported by the icon library.
+Also, some of my old commit messages are terrible. "New update" tells me basically nothing when I go back to find a change.
 
-Then there were the photos. Two of the travel photos were bigger than Cloudflare's 25 MiB file limit, so the build failed. They were just pictures of Dubai and Santorini, but they were huge files. They're replaced with smaller ones now.
+## What next?
 
-I also added photo credits. The travel pictures aren't photos I took myself, and some of their licenses require credit to the photographer.
+I want to add more projects, especially robot stuff. I'll write about them here when I have something to show.
 
-If you look at my older commits, some of the messages don't explain much. A message like "new update" isn't very helpful when I'm trying to find what I changed later.
-
-## What I want to add
-
-More projects, mostly. I'd like to have more robot and coding stuff to show here, and write about it when I do.
-
-For now, you can look around the site or check the code on [GitHub](https://github.com/yigit-kilicaslandev/websiteing). It's still something I'm working on.
+The code is on [GitHub](https://github.com/yigit-kilicaslandev/websiteing) if you want to look around. I'm still changing things, so it'll probably look different again later.

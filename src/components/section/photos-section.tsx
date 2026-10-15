@@ -1,6 +1,7 @@
 import BlurFade from "@/components/magicui/blur-fade";
 import { DATA } from "@/data/resume";
 import { PHOTO_CREDITS, PHOTO_CHANGES } from "@/data/photo-credits";
+import { useLayoutEffect, useRef } from "react";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -12,6 +13,17 @@ const colAspects = [
 ];
 
 export default function PhotosSection() {
+  const creditsRef = useRef<HTMLDetailsElement>(null);
+
+  useLayoutEffect(() => {
+    try {
+      const saved = localStorage.getItem("photo-credits-open");
+      if (creditsRef.current && saved !== null) creditsRef.current.open = saved === "true";
+    } catch {
+      // Credits still work normally if browser storage is unavailable.
+    }
+  }, []);
+
   const photos = DATA.photos.filter((photo) => photo.src);
   const col1 = photos.filter((_, i) => i % 3 === 0);
   const col2 = photos.filter((_, i) => i % 3 === 1);
@@ -55,19 +67,33 @@ export default function PhotosSection() {
             </div>
           ))}
         </div>
-        <details className="text-sm text-muted-foreground">
-          <summary className="cursor-pointer font-medium text-foreground">Photo credits</summary>
-          <ul className="mt-3 space-y-2">
-            {PHOTO_CREDITS.map((credit) => (
-              <li key={credit.place}>
-                {credit.place}: Photo by{" "}
-                <a href={credit.source} className="underline underline-offset-4 hover:text-foreground">{credit.author}</a>.
-                {" "}License: <a href={credit.licenseUrl} className="underline underline-offset-4 hover:text-foreground">{credit.license}</a>.
-              </li>
-            ))}
-          </ul>
-          <p className="mt-3">{PHOTO_CHANGES}</p>
-        </details>
+        <BlurFade delay={BLUR_FADE_DELAY * 15}>
+          <details
+            id="photo-credits"
+            ref={creditsRef}
+            suppressHydrationWarning
+            className="text-sm text-muted-foreground"
+            onToggle={(event) => {
+              try {
+                localStorage.setItem("photo-credits-open", String(event.currentTarget.open));
+              } catch {
+                // The disclosure remains usable without persistence.
+              }
+            }}
+          >
+            <summary className="cursor-pointer font-medium text-foreground">Photo credits</summary>
+            <ul className="mt-3 space-y-2">
+              {PHOTO_CREDITS.map((credit) => (
+                <li key={credit.place}>
+                  {credit.place}: Photo by{" "}
+                  <a href={credit.source} className="underline underline-offset-4 hover:text-foreground">{credit.author}</a>.
+                  {" "}License: <a href={credit.licenseUrl} className="underline underline-offset-4 hover:text-foreground">{credit.license}</a>.
+                </li>
+              ))}
+            </ul>
+            <p className="mt-3">{PHOTO_CHANGES}</p>
+          </details>
+        </BlurFade>
       </div>
     </section>
   );

@@ -15,6 +15,14 @@ import HomePage from "@/components/HomePage";
     }
   </script>
   <HomePage client:load />
+  <script is:inline>
+    // Restore the disclosure's height before native scroll restoration.
+    try {
+      const credits = document.getElementById("photo-credits");
+      const saved = localStorage.getItem("photo-credits-open");
+      if (credits && saved !== null) credits.open = saved === "true";
+    } catch (_) {}
+  </script>
 </Layout>
 
 <style is:global>

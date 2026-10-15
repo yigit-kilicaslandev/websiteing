@@ -1,37 +1,35 @@
-# My Personal Portfolio 🚀
+# My Website 🚀
 
-Hi! I'm Yiğit, and this is my personal website. A portfolio is a place to share the things you make and the skills you learn.
+Hey, I'm Yiğit! This is my website for showing my projects, travel photos, competitions, and blog.
 
-I started this website in 2026 when I was 10. I didn't have many projects yet, so building my own website became a project of its own! I started with a copy of Starfolio and made it my own.
+I started it in 2026 when I was 10. It began as a copy of Starfolio, and I've been changing it to make it feel like mine. I'm still learning how all the code works, but it's fun when something I made finally works!
 
-Made with code, curiosity, and a lot of love. ❤️
+## [Come check it out!](https://yigitkilicaslan.com)
 
-## [Visit my website](https://yigitkilicaslan.com)
+[![Screenshot of my website (click to visit it)](public/photos/Screenshot.png)](https://yigitkilicaslan.com)
 
-[![Screenshot of my portfolio website](public/photos/Screenshot.png)](https://yigitkilicaslan.com)
+## What's on here?
 
-## What's inside?
+- Stuff about me and what I'm learning
+- Projects I've made
+- Robot and coding competitions I've joined
+- Photos from places I've visited
+- Blog posts about things I'm doing
 
-- A little about me and what I'm learning.
-- Projects I've worked on.
-- Robot and coding competitions I've joined.
-- Photos from my travels.
-- A blog where I share updates on my carrer.
+## How I made it
 
-## What is it built with?
+- **Astro** puts the website together.
+- **React and TypeScript** help with the interactive parts. This project started as Starfolio, so I'm still learning how all of it works.
+- **CSS and Tailwind CSS** make things look nice.
+- **MDX** lets the blog posts have extra website stuff in them.
 
-- **Astro** for putting the website together.
-- **React and TypeScript** help build the parts you can interact with.
-- **CSS and Tailwind CSS** control the colors, spacing, and style.
-- **MDX** lets me write blog posts with text and custom parts.
+## Want to run it on your computer?
 
-## Run it on your computer
+You'll need **Node.js 22.12.0 or newer** and **pnpm**. They help the website's code run and get the packages it needs.
 
-You'll need **Node.js version 22.12.0 or newer** and **pnpm** installed. Node.js runs the tools website needs, and pnpm downloads the packages the project needs.
-
-1. Download or clone this project, then open its folder in your code editor.
-2. Open a terminal in that folder. A terminal is a place where you type commands for your computer.
-3. Download the project's packages:
+1. Download or clone this project and open the folder in a code editor.
+2. Open a terminal in the folder. That's where you type commands.
+3. Get the packages:
 
    ```sh
    pnpm install
@@ -43,24 +41,24 @@ You'll need **Node.js version 22.12.0 or newer** and **pnpm** installed. Node.js
    pnpm dev
    ```
 
-5. Open the local address shown in the terminal in your browser. It's usually `http://localhost:4321`.
+5. Open the address from the terminal in your browser. It's usually `http://localhost:4321`.
 
-Save a change to a file and watch the browser update! When you're finished, press **Ctrl + C** in the terminal to stop the website.
+Now you can change something and see it update! Press **Ctrl + C** in the terminal when you're done. Hopefully you made something cool (and didn't break anything 😅).
 
-## Try changing something
+## Want to change something?
 
-- **Your name, bio, and projects:** `src/data/resume.tsx`
-- **Site settings and theme colors:** `src/data/config.ts`
-- **Blog posts:** `src/content/blog/`
-- **Pictures:** `public/`
-- **Website styles:** `src/styles/global.css`
+- My name, bio, and projects are in `src/data/resume.tsx`.
+- Site settings and colors are in `src/data/config.ts`.
+- Blog posts are in `src/content/blog/`.
+- Pictures are in `public/`.
+- Styles are in `src/styles/global.css`.
 
-Test it: change a sentence in your bio, save the file, and see what happens.
+Try changing one little thing, like a sentence in my bio. Then save it and see what happens!
 
-## Check the finished website
+## To check the finished build
 
-Run `pnpm build` to prepare the website for publishing. Then run `pnpm preview` to view that build on your computer.
+Run `pnpm build`, then `pnpm preview` to see the built website on your computer.
 
 ## Photo credits
 
-I didn't take the travel photos myself. You can find the photographers, original pictures, and licenses in [Photo credits](credits.md).
+I didn't take the travel photos myself. The photographers, original pictures, and licenses are listed in [Photo credits](credits.md).

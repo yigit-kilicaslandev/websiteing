@@ -1,57 +1,44 @@
 ---
-title: "How I Built My Personal Portfolio — From Fork to Production"
+title: "How I made my website"
 publishedAt: "2026-08-31"
-updatedAt: "2026-08-31"
+updatedAt: "2026-10-15"
 author: "Yiğit Kılıçaslan"
-summary: "How I leveraged open-source to build a stunning portfolio site with custom features and modern web tech."
+summary: "I wanted a website for my projects, so I started with Starfolio and changed it. Here's what I've added and a few things that broke."
 image: "https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=800&h=192&fit=crop"
 ---
 
-# How I Built My Personal Portfolio — From Fork to Production
+# How I made my website
 
-Building a personal website doesn't have to start from scratch. By strategically forking an existing open-source project, I was able to focus on what truly matters — **customization, content, and standing out**.
+Hi, I'm Yiğit. I'm 11 and this is my website. I started it when I was 10, in 2026. I didn't have loads of projects to put on it, but I still wanted somewhere to share the things I make.
 
-## Why I Forked Instead of Starting from Zero
+The website itself counts as a project too, so that helped.
 
-The smartest developers know that reinventing the wheel is rarely the best use of time. I found a modern, well-architected portfolio template called **Starfolio** ([github.com/webrating/starfolio](https://github.com/webrating/starfolio)), built with **Astro, TypeScript, and Tailwind CSS** — and forked it to use as my foundation.
+## Where I started
 
-This gave me:
-- A battle-tested architecture with optimized performance
-- Modern tooling (Astro's island architecture, MDX for content)
-- A clean, responsive design out of the box
+I used a template called [Starfolio](https://github.com/webrating/starfolio). I forked it on GitHub, which means I made my own copy that I could change.
 
-## The Power of `resume.tsx`
+So I didn't write everything from zero. The layout was already there. I changed it to have my information, schools, projects and robot competitions instead of the example stuff.
 
-The real magic happened in `resume.tsx` — the single source of truth for my entire site. One file controls everything: my bio, work experience, education, skills, projects, and contact information.
+## Making it mine
 
-Here's what I did:
-- **Refactored the data layer** to showcase my projects and competitions
-- **Integrated custom icon libraries** (Simple Icons, Lucide) for a polished look
-- **Added social integrations** — GitHub, LinkedIn, X (Twitter), and YouTube
-- **Configured section ordering** to highlight what matters most
-- **Renamed components** — The original template had a "Hackintosh" project reference. I rebranded it with a custom name while keeping the internal file references (`hakintosh`) intact for backward compatibility
+Most of my information is in a file called `src/data/resume.tsx`. That's where I can add a project or change my bio without searching through every page.
 
-## Tech Stack Highlights
+I added my Lego sumo robot and this website to the projects. I also added a travel photo section and icons for the languages and tools I use. Picking the icons was a small thing, but I like seeing them all together.
 
-| Technology | Purpose |
-|------------|---------|
-| Astro | Static site generation with island architecture |
-| TypeScript | Type-safe data structures and components |
-| MDX | Rich blog content with component support |
-| Tailwind CSS | Utility-first styling for rapid development |
-| Lucide Icons | Clean, consistent iconography |
+The site uses Astro, TypeScript and Tailwind CSS. These blog posts are MDX files. For this post I'm mostly just writing text in one of those files.
 
-## Key Takeaways
+## Things broke too
 
-1. **Fork strategically** — Choose a project with solid architecture and an active community
-2. **Customize deeply** — Don't just change colors; refactor the data model and add your own features
-3. **Keep content in one place** — The `resume.tsx` pattern makes updates trivial
-4. **Deploy with confidence** — Astro's static output means zero server costs and instant page loads
+I had to fix the X icon because the one I tried to use wasn't exported by the icon library.
 
-## What's Next
+Then there were the photos. Two of the travel photos were bigger than Cloudflare's 25 MiB file limit, so the build failed. They were just pictures of Dubai and Santorini, but they were huge files. They're replaced with smaller ones now.
 
-I'm continuing to iterate on the site — adding more projects, refining the design, and building out the blog section. The fork gave me a head start, but the **customization** is what makes it mine.
+I also added photo credits. The travel pictures aren't photos I took myself, and some of their licenses require credit to the photographer.
 
----
+If you look at my older commits, some of the messages don't explain much. A message like "new update" isn't very helpful when I'm trying to find what I changed later.
 
-*Built with Astro, TypeScript, and a healthy respect for open-source.*
+## What I want to add
+
+More projects, mostly. I'd like to have more robot and coding stuff to show here, and write about it when I do.
+
+For now, you can look around the site or check the code on [GitHub](https://github.com/yigit-kilicaslandev/websiteing). It's still something I'm working on.

@@ -16,18 +16,18 @@ Made with code, curiosity, and a lot of love. ❤️
 - Projects I've worked on.
 - Robot and coding competitions I've joined.
 - Photos from my travels.
-- A blog where I share updates.
+- A blog where I share updates on my carrer.
 
 ## What is it built with?
 
-- **Astro** puts the website together.
+- **Astro** for putting the website together.
 - **React and TypeScript** help build the parts you can interact with.
 - **CSS and Tailwind CSS** control the colors, spacing, and style.
-- **MDX** lets me write blog posts with text and custom website parts.
+- **MDX** lets me write blog posts with text and custom parts.
 
 ## Run it on your computer
 
-You'll need **Node.js version 22.12.0 or newer** and **pnpm** installed first. Node.js runs the website tools, and pnpm downloads the code packages the project needs.
+You'll need **Node.js version 22.12.0 or newer** and **pnpm** installed. Node.js runs the tools website needs, and pnpm downloads the packages the project needs.
 
 1. Download or clone this project, then open its folder in your code editor.
 2. Open a terminal in that folder. A terminal is a place where you type commands for your computer.

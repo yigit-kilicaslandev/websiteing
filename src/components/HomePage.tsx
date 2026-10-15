@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { EntranceAnimationContext } from "@/components/magicui/entrance-animation";
+import { BackToTop } from "@/components/back-to-top";
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -127,43 +129,72 @@ const sectionComponents: Record<string, React.ReactNode> = {
 };
 
 export default function HomePage() {
+  // Keep the server-rendered page visible while the browser restores its scroll.
+  const [playEntrance, setPlayEntrance] = useState(false);
+  const nameRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    let frame = 0;
+    const checkStartingPosition = () => {
+      frame = requestAnimationFrame(() => {
+        const name = nameRef.current?.getBoundingClientRect();
+        const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        setPlayEntrance(Boolean(name && name.bottom > 0 && name.top < window.innerHeight && !reducedMotion));
+      });
+    };
+
+    // pageshow follows native scroll restoration, including on reload.
+    if (document.readyState === "complete") checkStartingPosition();
+    else window.addEventListener("pageshow", checkStartingPosition, { once: true });
+
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("pageshow", checkStartingPosition);
+    };
+  }, []);
+
   const orderedSections = Object.entries(DATA.sections)
     .filter(([, s]) => s.enabled)
     .sort(([, a], [, b]) => a.order - b.order)
     .map(([key]) => key);
 
   return (
-    <main className="min-h-dvh flex flex-col gap-14 relative">
-      <section id="hero">
-        <div className="mx-auto w-full max-w-2xl space-y-8">
-          <div className="gap-2 gap-y-6 flex flex-col md:flex-row justify-between">
-            <div className="gap-2 flex flex-col order-2 md:order-1">
-              <BlurFadeText
-                delay={BLUR_FADE_DELAY}
-                className="text-3xl font-semibold tracking-tighter sm:text-4xl lg:text-5xl"
-                yOffset={8}
-                text={`Hi, I'm ${DATA.name.split(" ")[0]}`}
-              />
-              <BlurFadeText
-                className="text-muted-foreground max-w-[600px] md:text-lg lg:text-xl"
-                delay={BLUR_FADE_DELAY}
-                text={DATA.description}
-              />
+    <EntranceAnimationContext.Provider value={playEntrance}>
+      <main className="min-h-dvh flex flex-col gap-14 relative">
+        <section id="hero">
+          <div className="mx-auto w-full max-w-2xl space-y-8">
+            <div className="gap-2 gap-y-6 flex flex-col md:flex-row justify-between">
+              <div className="gap-2 flex flex-col order-2 md:order-1">
+                <div ref={nameRef}>
+                  <BlurFadeText
+                    delay={BLUR_FADE_DELAY}
+                    className="text-3xl font-semibold tracking-tighter sm:text-4xl lg:text-5xl"
+                    yOffset={8}
+                    text={`Hi, I'm ${DATA.name.split(" ")[0]}`}
+                  />
+                </div>
+                <BlurFadeText
+                  className="text-muted-foreground max-w-[600px] md:text-lg lg:text-xl"
+                  delay={BLUR_FADE_DELAY}
+                  text={DATA.description}
+                />
+              </div>
+              <BlurFade delay={BLUR_FADE_DELAY} className="order-1 md:order-2">
+                <Avatar className="size-24 md:size-32 border rounded-full shadow-lg ring-4 ring-muted">
+                  <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
+                  <AvatarFallback>{DATA.initials}</AvatarFallback>
+                </Avatar>
+              </BlurFade>
             </div>
-            <BlurFade delay={BLUR_FADE_DELAY} className="order-1 md:order-2">
-              <Avatar className="size-24 md:size-32 border rounded-full shadow-lg ring-4 ring-muted">
-                <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
-                <AvatarFallback>{DATA.initials}</AvatarFallback>
-              </Avatar>
-            </BlurFade>
           </div>
-        </div>
-      </section>
-      {orderedSections.map((key) => (
-        <React.Fragment key={key}>
-          {sectionComponents[key]}
-        </React.Fragment>
-      ))}
-    </main>
+        </section>
+        {orderedSections.map((key) => (
+          <React.Fragment key={key}>
+            {sectionComponents[key]}
+          </React.Fragment>
+        ))}
+      </main>
+      <BackToTop />
+    </EntranceAnimationContext.Provider>
   );
 }

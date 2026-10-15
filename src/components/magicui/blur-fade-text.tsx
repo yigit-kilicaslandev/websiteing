@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import { motion, type Variants } from "motion/react";
 import { useMemo } from "react";
+import { useEntranceAnimation } from "./entrance-animation";
 
 interface BlurFadeTextProps {
   text: string;
@@ -25,6 +26,7 @@ const BlurFadeText = ({
   yOffset = 8,
   animateByCharacter = false,
 }: BlurFadeTextProps) => {
+  const playEntrance = useEntranceAnimation();
   const defaultVariants: Variants = {
     hidden: { y: -yOffset, opacity: 0, filter: "blur(8px)" },
     visible: { y: 0, opacity: 1, filter: "blur(0px)" },
@@ -42,13 +44,13 @@ const BlurFadeText = ({
           };
           return (
             <motion.span
-              key={i}
-              initial="hidden"
+              key={`${playEntrance}-${i}`}
+              initial={playEntrance ? "hidden" : false}
               animate="visible"
               variants={charVariants}
               transition={{
-                duration,
-                delay: delay + i * characterDelay,
+                duration: playEntrance ? duration : 0,
+                delay: playEntrance ? delay + i * characterDelay : 0,
                 ease: "easeOut",
               }}
               className={cn("inline-block", className)}
@@ -65,12 +67,13 @@ const BlurFadeText = ({
   return (
     <div className="flex">
       <motion.span
-        initial="hidden"
+        key={playEntrance ? "animated" : "immediate"}
+        initial={playEntrance ? "hidden" : false}
         animate="visible"
         variants={combinedVariants}
         transition={{
-          duration,
-          delay,
+          duration: playEntrance ? duration : 0,
+          delay: playEntrance ? delay : 0,
           ease: "easeOut",
         }}
         className={cn("inline-block", className)}

@@ -1,5 +1,6 @@
 import { AnimatePresence, motion, useInView, type Variants } from "motion/react";
 import { useRef } from "react";
+import { useEntranceAnimation } from "./entrance-animation";
 
 interface BlurFadeProps {
   children: React.ReactNode;
@@ -26,6 +27,7 @@ const BlurFade = ({
   inViewMargin = "-50px",
   blur = "6px",
 }: BlurFadeProps) => {
+  const playEntrance = useEntranceAnimation();
   const ref = useRef(null);
   const inViewResult = useInView(ref, {
     once: true,
@@ -40,14 +42,15 @@ const BlurFade = ({
   return (
     <AnimatePresence>
       <motion.div
+        key={playEntrance ? "animated" : "immediate"}
         ref={ref}
-        initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
+        initial={playEntrance ? "hidden" : false}
+        animate={!playEntrance || isInView ? "visible" : "hidden"}
         exit="hidden"
         variants={combinedVariants}
         transition={{
-          delay: 0.04 + delay,
-          duration,
+          delay: playEntrance ? 0.04 + delay : 0,
+          duration: playEntrance ? duration : 0,
           ease: "easeOut",
         }}
         className={className}

@@ -63,6 +63,10 @@ Start small: change a sentence in your bio, save the file, and see what happens.
 
 Run `pnpm build` to prepare the website for publishing. Then run `pnpm preview` to view that build on your computer.
 
+## Photo credits
+
+I didn't take the travel photos myself. You can find the photographers, original pictures, and licenses in [Photo credits](credits.md).
+
 ## Thanks
 
 Thanks to **Starfolio** for the starting point, and to everyone who shares their code so others can learn from it!

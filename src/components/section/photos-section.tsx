@@ -1,5 +1,6 @@
 import BlurFade from "@/components/magicui/blur-fade";
 import { DATA } from "@/data/resume";
+import { PHOTO_CREDITS, PHOTO_CHANGES } from "@/data/photo-credits";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -46,6 +47,19 @@ export default function PhotosSection() {
             </div>
           ))}
         </div>
+        <details className="text-sm text-muted-foreground">
+          <summary className="cursor-pointer font-medium text-foreground">Photo credits</summary>
+          <ul className="mt-3 space-y-2">
+            {PHOTO_CREDITS.map((credit) => (
+              <li key={credit.place}>
+                {credit.place}: Photo by{" "}
+                <a href={credit.source} className="underline underline-offset-4 hover:text-foreground">{credit.author}</a>.
+                {" "}License: <a href={credit.licenseUrl} className="underline underline-offset-4 hover:text-foreground">{credit.license}</a>.
+              </li>
+            ))}
+          </ul>
+          <p className="mt-3">{PHOTO_CHANGES}</p>
+        </details>
       </div>
     </section>
   );

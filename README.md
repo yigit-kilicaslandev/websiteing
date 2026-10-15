@@ -29,17 +29,8 @@ You'll need **Node.js 22.12.0 or newer** and **pnpm**. They help the website's c
 
 1. Download or clone this project and open the folder in a code editor.
 2. Open a terminal in the folder. That's where you type commands.
-3. Get the packages:
-
-   ```sh
-   pnpm install
-   ```
-
-4. Start the website:
-
-   ```sh
-   pnpm dev
-   ```
+3. Get the packages by running `pnpm install`.
+4. Start the website with `pnpm dev`.
 
 5. Open the address from the terminal in your browser. It's usually `http://localhost:4321`.
 

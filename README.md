@@ -52,4 +52,4 @@ Run `pnpm build`, then `pnpm preview` to see the built website on your computer.
 
 ## Photo credits
 
-I didn't take the travel photos myself. The photographers, original pictures, and licenses are listed in [Photo credits](credits.md).
+I found the travel pics online. The [photo credits](credits.md) page has the photographers, original pictures, and licenses.

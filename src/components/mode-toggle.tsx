@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
+import { SunIcon } from "@radix-ui/react-icons";
+import { Moon } from "lucide-react";
 import { useTheme } from "next-themes";
 import { cn } from "@/lib/utils";
 
@@ -16,7 +17,7 @@ export function ModeToggle({ className }: { className?: string }) {
       onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
     >
       <SunIcon aria-hidden="true" className="hidden h-full w-full dark:block" />
-      <MoonIcon aria-hidden="true" className="h-full w-full dark:hidden" />
+      <Moon aria-hidden="true" className="h-full w-full dark:hidden" />
     </Button>
   );
 }

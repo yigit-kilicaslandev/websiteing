@@ -232,8 +232,7 @@ export const DATA = {
       href: "https://github.com/yigit-kilicaslandev/2026-legosumo",
       dates: "March 2024 - Present",
       active: true,
-      description:
-        "A Lego Sumo Robot designed and built for competition in 2026. The robot is programmed to push other robots out of the ring using sensors and motors. It is a fun and challenging project that combines robotics, programming, and teamwork. I learned a lot about designing and building robots, as well as programming them to perform specific tasks. The robot is built using Lego Mindstorms and is programmed using block-based programming (Scratch) and Python. I am proud of the robot and the skills I developed during the project. I hope to participate in more robotics competitions in the future and continue to improve my skills. I also want to thank my team member for their support and collaboration throughout the project. It was a great learning experience and I am excited to apply what I learned to future projects.",
+      description: "I built a Lego robot for sumo competitions. It uses sensors to find other robots and tries to push them out of the ring!",
       technologies: [
         "Block-based (Scratch)",
         "Python",
@@ -255,7 +254,7 @@ export const DATA = {
       href: "https://github.com/yigit-kilicaslandev/websiteing/tree/master",
       dates: "October 2023 - February 2024",
       active: true,
-      description: `A website made by me using Astro, TypeScript, and MDX. The website is designed to showcase my projects, skills, and experience. It is a personal portfolio website that I built to demonstrate my web development skills and to provide a platform for sharing my work with others. The website is built using modern web technologies and follows best practices for performance, accessibility, and SEO. I am proud of the website and the skills I developed during the project. I hope to continue improving the website and adding new features in the future. I also want to thank my mentors and peers for their support and feedback throughout the project. It was a great learning experience and I am excited to apply what I learned to future web development projects. I also want to thank the open-source community for their contributions to the tools and libraries I used in building the website. Their work has been invaluable in helping me create a high-quality website. I am always looking for ways to improve my web development skills and stay up-to-date with the latest trends and technologies in the field. I plan to continue learning and experimenting with new tools and frameworks to enhance my website and create even more engaging user experiences. I also want to share my knowledge and experiences with others in the web development community, whether through blog posts, tutorials, or open-source contributions. Overall, building this website has been a rewarding experience that has allowed me to grow as a developer and showcase my abilities to potential employers and collaborators. Plus, it has given me the opportunity to reflect on my journey as a software engineer and the skills I have acquired along the way. I am excited to see where this project will take me in the future and how it will continue to evolve as I learn and grow in my career.`,
+      description: "This is the website you're on! I started with Starfolio and changed it to show my projects, robot competitions and a bit about me.",
       technologies: [
         "TypeScript",
         "Astro",

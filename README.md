@@ -1,8 +1,8 @@
 # My Website 🚀
 
-Hey, I'm Yiğit! This is my website for showing my projects, travel photos, competitions, and blog.
+Hey, I'm Yiğit! This is my site for projects, travel photos, competitions, and my blog.
 
-I started it in 2026 when I was 10. It began as a fork of Starfolio, and I've been changing it to make it feel like mine. I'm still tryna learn how all the code works, but it's fun when something I made finally works!
+I started it in 2026 when I was 10. It began as a Starfolio fork, and I'm changing it to make it mine. I'm still tryna learn the code, but it's fun when my changes actually work!
 
 ## [Come check it out!](https://yigitkilicaslan.com)
 

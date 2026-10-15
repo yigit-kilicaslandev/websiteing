@@ -1,8 +1,6 @@
 # My Website 🚀
 
-Hey, I'm Yiğit! This is my site for projects, travel photos, competitions, and my blog.
-
-I started it in 2026, when I was 10, by forking Starfolio. I'm still tryna learn the code, but it's fun when my changes work!
+Hey, I'm Yiğit. I started this website in 2026 when I was 10, using Starfolio as a starting point. I've changed it to show my projects and things I'm learning. I'm still figuring out the code, but it's fun when my changes show up on a real website.
 
 ## [Come check it out!](https://yigitkilicaslan.com)
 
@@ -10,45 +8,12 @@ I started it in 2026, when I was 10, by forking Starfolio. I'm still tryna learn
 
 ## What's on here?
 
-- Stuff about me and what I'm trying to learn
-- Projects I've made in the past
-- Robot and coding competitions I've joined
-- Photos from places I've visited
-- Blog posts about things I'm trying to do
+Projects I've made, robot and coding competitions, photos from places I've visited, and blog posts about stuff I'm trying.
 
-## How I made it
+## What's it made with?
 
-- **Astro** helps make the website work.
-- **React and TypeScript** help with the interactive parts of the website.
-- **CSS and Tailwind CSS** make things look nicer.
-- **MDX** lets the blog posts have extra custom website stuff in them.
-
-## Want to test it on your computer?
-
-You'll need **Node.js 22.12.0 or newer** and **pnpm**. They help the website's code run and get the packages it needs.
-
-1. Download or fork this project and open the folder in a code editor.
-2. Open a terminal in the folder. That's where you'll type commands.
-3. Get the packages by running `pnpm install`.
-4. Start the website with `pnpm dev`.
-5. Open the address from the terminal in your browser. It's usually `http://localhost:4321`.
-
-Now you can change something and see it update! Press **Ctrl + C** in the terminal when you're done. Hopefully you made something cool (and didn't break anything 😅).
-
-## Want to change something?
-
-- My name, bio, and projects are in `src/data/resume.tsx`.
-- Site settings and colors are in `src/data/config.ts`.
-- Blog posts are in `src/content/blog/`.
-- Pictures are in `public/`.
-- Styles are in `src/styles/global.css`.
-
-Maybe start by changing a word in my bio and see if it shows up on the website.
-
-## Try the finished site
-
-Run `pnpm build`, then `pnpm preview` to see the built website on your own computer.
+Astro puts the site together. React and TypeScript help with interactive parts, CSS and Tailwind make it look right, and MDX is for blog posts.
 
 ## Photo credits
 
-I found the travel pics online. The [photo credits](credits.md) page has the photographers, original pictures, and licenses.
+The travel photos are from other photographers. Their names, original pictures, and licenses are on the [photo credits](credits.md) page.

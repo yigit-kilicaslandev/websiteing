@@ -43,7 +43,7 @@ Now you can change something and see it update! Press **Ctrl + C** in the termin
 - Pictures are in `public/`.
 - Styles are in `src/styles/global.css`.
 
-Try changing one little thing, like a sentence in my bio. Then save it and see what happens!
+Maybe start by changing a word in my bio and see if it shows up on the website.
 
 ## To check the finished build
 

@@ -6,9 +6,7 @@ I started this website in 2026 when I was 10. I didn't have many projects yet, s
 
 Made with code, curiosity, and a lot of love. ❤️
 
-## Take a look
-
-[Visit my website](https://yigitkilicaslan.com)
+## [Visit my website](https://yigitkilicaslan.com)
 
 ![Screenshot of my portfolio website](public/photos/Screenshot.png)
 
@@ -66,7 +64,3 @@ Run `pnpm build` to prepare the website for publishing. Then run `pnpm preview` 
 ## Photo credits
 
 I didn't take the travel photos myself. You can find the photographers, original pictures, and licenses in [Photo credits](credits.md).
-
-## Thanks
-
-Thanks to **Starfolio** for the starting point, and to everyone who shares their code so others can learn from it!

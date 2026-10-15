@@ -1,7 +1,24 @@
 import type { ReactNode, SVGProps } from "react";
 import { Icons } from "@/components/icons";
 import { House, Library, X } from "lucide-react";
-import { siArduino, siHtml5, siPython, siArchlinux } from "simple-icons/icons";
+import {
+  siArduino,
+  siGit,
+  siApachenetbeanside,
+  siHtml5,
+  siJavascript,
+  siLinux,
+  siNodedotjs,
+  siOracle,
+  siPhp,
+  siPython,
+  siReact,
+  siTypescript,
+  siUnity,
+  siUnrealengine,
+  siArchlinux,
+} from "simple-icons/icons";
+import { Java } from "@/components/ui/svgs/java";
 
 const SimpleIcon = ({ icon, className }: { icon: { svg: string }; className?: string }) => (
   <svg
@@ -68,8 +85,20 @@ export const DATA = {
   ],
   skills: [
     { name: "Arduino", icon: (props: SVGProps<SVGSVGElement>) => <SimpleIcon icon={siArduino} {...props} /> },
-    { name: "Html", icon: (props: SVGProps<SVGSVGElement>) => <SimpleIcon icon={siHtml5} {...props} /> },
+    { name: "Git", icon: (props: SVGProps<SVGSVGElement>) => <SimpleIcon icon={siGit} {...props} /> },
+    { name: "Apache NetBeans", icon: (props: SVGProps<SVGSVGElement>) => <SimpleIcon icon={siApachenetbeanside} {...props} /> },
+    { name: "HTML5", icon: (props: SVGProps<SVGSVGElement>) => <SimpleIcon icon={siHtml5} {...props} /> },
+    { name: "Java", icon: Java },
+    { name: "JavaScript", icon: (props: SVGProps<SVGSVGElement>) => <SimpleIcon icon={siJavascript} {...props} /> },
+    { name: "Linux", icon: (props: SVGProps<SVGSVGElement>) => <SimpleIcon icon={siLinux} {...props} /> },
+    { name: "Node.js", icon: (props: SVGProps<SVGSVGElement>) => <SimpleIcon icon={siNodedotjs} {...props} /> },
+    { name: "Oracle", icon: (props: SVGProps<SVGSVGElement>) => <SimpleIcon icon={siOracle} {...props} /> },
+    { name: "PHP", icon: (props: SVGProps<SVGSVGElement>) => <SimpleIcon icon={siPhp} {...props} /> },
     { name: "Python", icon: (props: SVGProps<SVGSVGElement>) => <SimpleIcon icon={siPython} {...props} /> },
+    { name: "React", icon: (props: SVGProps<SVGSVGElement>) => <SimpleIcon icon={siReact} {...props} /> },
+    { name: "TypeScript", icon: (props: SVGProps<SVGSVGElement>) => <SimpleIcon icon={siTypescript} {...props} /> },
+    { name: "Unity", icon: (props: SVGProps<SVGSVGElement>) => <SimpleIcon icon={siUnity} {...props} /> },
+    { name: "Unreal Engine", icon: (props: SVGProps<SVGSVGElement>) => <SimpleIcon icon={siUnrealengine} {...props} /> },
     { name: "Arch Linux", icon: (props: SVGProps<SVGSVGElement>) => <SimpleIcon icon={siArchlinux} {...props} /> },
   ],
   navbar: [
@@ -95,7 +124,7 @@ export const DATA = {
         },
       X: {
           name: "X",
-          url: "https://x.com",
+          url: "https://x.com/ygtdev00",
           icon: Icons.x,            
           navbar: true,
 
@@ -106,7 +135,7 @@ export const DATA = {
           icon: Icons.youtube,
           navbar: false,
         },
-      email: {
+      Email: {
         name: "Send Email",
         url: "mailto:contact@yigitkilicaslan.com",
         icon: Icons.email,

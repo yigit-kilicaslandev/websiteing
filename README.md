@@ -8,7 +8,7 @@ Made with code, curiosity, and a lot of love. ❤️
 
 ## [Visit my website](https://yigitkilicaslan.com)
 
-![Screenshot of my portfolio website](public/photos/Screenshot.png)
+[![Screenshot of my portfolio website](public/photos/Screenshot.png)](https://yigitkilicaslan.com)
 
 ## What's inside?
 

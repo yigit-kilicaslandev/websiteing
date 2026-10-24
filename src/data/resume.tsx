@@ -216,15 +216,15 @@ export const DATA = {
       degree: "Elementary School",
       logoUrl: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fw7.pngwing.com%2Fpngs%2F705%2F605%2Fpng-transparent-ted-university-ted-ankara-college-foundation-schools-ted-istanbul-college-turkish-education-association-school-emblem-logo-university.png&f=1&nofb=1&ipt=928dda66bcf1927c63f4a9b05144618c8d1fc7b97f13122a05f0f2726e4f67e2",
       start: "2018",
-      end: "2024",
+      end: "2025",
     },
     {
-      school: "Bilnet Schools",
-      href: "https://bilnetschools.com",
+      school: "TED College",
+      href: "https://ted.org.tr/en/",
       degree: "Middle School",
-      logoUrl: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fplay-lh.googleusercontent.com%2FyHzq7VqQVOAqdD2EbYnBdrB9GCNmFe-AFFcjLTogdO1ASupyGcEcphFEfKjlKnzLIj7P&f=1&nofb=1&ipt=74475c4f836a8c6ad14fec37d4be7a176a406b2dd6d2e9f777ccf7c659f3c909",
-      start: "2024",
-      end: "2028",
+      logoUrl: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fw7.pngwing.com%2Fpngs%2F705%2F605%2Fpng-transparent-ted-university-ted-ankara-college-foundation-schools-ted-istanbul-college-turkish-education-association-school-emblem-logo-university.png&f=1&nofb=1&ipt=928dda66bcf1927c63f4a9b05144618c8d1fc7b97f13122a05f0f2726e4f67e2",
+      start: "2025",
+      end: "2029",
     }
   ],
   projects: [

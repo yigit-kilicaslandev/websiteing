@@ -1,0 +1,66 @@
+<!-- Keep server-rendered content readable when JavaScript is disabled. -->
+<script is:inline>
+  (() => {
+    const root = document.documentElement;
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (reducedMotion.matches) return;
+
+    root.setAttribute("data-labs-pending", "");
+    // Never leave the page hidden if a font request stalls or setup fails.
+    const fallback = window.setTimeout(() => {
+      root.removeAttribute("data-labs-pending");
+    }, 3000);
+
+    const reveal = async () => {
+      try {
+        await Promise.all([
+          document.fonts.load('400 1em "Outfit Variable"', "Labs Yiğit"),
+          document.fonts.load('600 1em "Outfit Variable"', "Labs"),
+          document.fonts.load('400 1em "Geist Mono Variable"', "EXPERIMENTS"),
+        ]);
+      } catch (_) {
+        // The fallback font remains usable if the web fonts fail.
+      }
+      if (!root.hasAttribute("data-labs-pending")) return;
+      window.clearTimeout(fallback);
+      const items = document.querySelectorAll("[data-labs-item]");
+      items.forEach((item, index) => {
+        item.style.setProperty("--labs-delay", `${0.04 + index * 0.06}s`);
+      });
+      requestAnimationFrame(() => {
+        if (!reducedMotion.matches) root.setAttribute("data-labs-entering", "");
+        root.removeAttribute("data-labs-pending");
+        window.setTimeout(() => root.removeAttribute("data-labs-entering"), 1200);
+      });
+    };
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", reveal, { once: true });
+    } else {
+      void reveal();
+    }
+    window.addEventListener("pageshow", (event) => {
+      if (event.persisted) {
+        root.removeAttribute("data-labs-pending");
+        root.removeAttribute("data-labs-entering");
+      }
+    });
+  })();
+</script>
+
+<style is:global>
+  html[data-labs-pending] [data-labs-item] {
+    opacity: 0;
+  }
+  html[data-labs-entering] [data-labs-item] {
+    animation: labs-entrance 0.4s ease-out var(--labs-delay, 0.04s) both;
+  }
+  @keyframes labs-entrance {
+    from { opacity: 0; transform: translateY(-6px); filter: blur(6px); }
+    to { opacity: 1; transform: translateY(0); filter: blur(0); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html[data-labs-pending] [data-labs-item] { opacity: 1; }
+    html[data-labs-entering] [data-labs-item] { animation: none; }
+  }
+</style>

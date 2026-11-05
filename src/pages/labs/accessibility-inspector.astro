@@ -1,18 +1,20 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import LabsEntrance from "@/components/LabsEntrance.astro";
 export const prerender = true;
 ---
 
 <Layout title="Website Accessibility Inspector" description="Check your HTML for missing alt attributes, button names, and form labels.">
+  <LabsEntrance />
   <main>
-    <a href="/labs" class="text-sm text-muted-foreground underline underline-offset-4">← All labs</a>
-    <header class="mb-8 mt-8">
+    <a data-labs-item href="/labs" class="text-sm text-muted-foreground underline underline-offset-4">← All labs</a>
+    <header data-labs-item class="mb-8 mt-8">
       <p class="mb-3 font-mono text-xs uppercase tracking-widest text-muted-foreground">Lab 01 / First version</p>
       <h1 class="mb-4 text-3xl font-semibold tracking-tight">Website Accessibility Inspector</h1>
       <p class="text-sm leading-relaxed text-muted-foreground">Paste your HTML to check for missing alt attributes, button names, and form labels. Each result explains what needs fixing.</p>
     </header>
 
-    <section aria-labelledby="input-heading" class="rounded-xl border bg-card p-5 sm:p-6">
+    <section data-labs-item aria-labelledby="input-heading" class="rounded-xl border bg-card p-5 sm:p-6">
       <h2 id="input-heading" class="mb-2 text-lg font-medium">Paste your HTML</h2>
       <p id="html-help" class="mb-5 text-sm leading-relaxed text-muted-foreground">A small snippet or a whole page is fine. Your code stays in your browser and won't run. This version checks HTML, so you can't paste a website URL.</p>
       <form id="inspector-form">
@@ -29,7 +31,7 @@ export const prerender = true;
       <noscript><p class="mt-4 text-sm">This tool needs JavaScript turned on to check your HTML.</p></noscript>
     </section>
 
-    <p id="inspection-status" role="status" aria-live="polite" aria-atomic="true" class="my-5 text-sm text-muted-foreground">No results yet. Paste your HTML or load the example to get started.</p>
+    <p data-labs-item id="inspection-status" role="status" aria-live="polite" aria-atomic="true" class="my-5 text-sm text-muted-foreground">No results yet. Paste your HTML or load the example to get started.</p>
     <section id="results" aria-labelledby="results-heading" hidden>
       <h2 id="results-heading" tabindex="-1" class="mb-3 text-xl font-semibold tracking-tight">Results</h2>
       <p id="check-counts" class="mb-5 text-xs text-muted-foreground"></p>
@@ -37,7 +39,7 @@ export const prerender = true;
       <p id="no-findings" class="rounded-xl border p-5 text-sm leading-relaxed" hidden>These three checks found no issues. That does not mean the page is fully accessible. You still need to test it with a keyboard and a screen reader.</p>
     </section>
 
-    <aside class="mt-10 border-t pt-6" aria-labelledby="limits-heading">
+    <aside data-labs-item class="mt-10 border-t pt-6" aria-labelledby="limits-heading">
       <h2 id="limits-heading" class="mb-3 text-base font-medium">What it misses</h2>
       <ul class="list-disc space-y-2 pl-5 text-sm leading-relaxed text-muted-foreground">
         <li>It can spot a missing alt attribute, but it can't tell whether the description is useful. Empty alt text is allowed for decorative images.</li>

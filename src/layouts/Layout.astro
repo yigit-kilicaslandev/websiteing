@@ -1,5 +1,8 @@
 ---
 import "../styles/global.css";
+import outfitLatin from "@fontsource-variable/outfit/files/outfit-latin-wght-normal.woff2?url";
+import outfitLatinExt from "@fontsource-variable/outfit/files/outfit-latin-ext-wght-normal.woff2?url";
+import geistMonoLatin from "@fontsource-variable/geist-mono/files/geist-mono-latin-wght-normal.woff2?url";
 import { DATA } from "@/data/resume";
 import { CONFIG } from "@/data/config";
 import NavbarIsland from "@/components/NavbarIsland";
@@ -40,6 +43,9 @@ const { baseFontSize } = CONFIG.typography;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
+    <link rel="preload" href={outfitLatin} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={outfitLatinExt} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={geistMonoLatin} as="font" type="font/woff2" crossorigin />
 
     <!-- FOUC prevention: apply stored theme before first paint -->
     <script is:inline>

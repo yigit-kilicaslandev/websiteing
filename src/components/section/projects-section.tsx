@@ -1,6 +1,7 @@
 import BlurFade from "@/components/magicui/blur-fade";
 import { ProjectCard } from "@/components/project-card";
 import { DATA } from "@/data/resume";
+import { ArrowUpRight, FlaskConical } from "lucide-react";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -50,6 +51,22 @@ export default function ProjectsSection() {
                         </BlurFade>
                     ))}
                 </div>
+                <BlurFade
+                    delay={BLUR_FADE_DELAY * 12 + DATA.projects.length * 0.05}
+                    className="w-full max-w-[800px] mx-auto"
+                >
+                    <a
+                        href="/labs"
+                        className="flex w-full items-center gap-4 rounded-xl border border-border bg-card p-6 transition-colors hover:bg-muted/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                    >
+                        <FlaskConical className="size-6 shrink-0 text-muted-foreground" aria-hidden />
+                        <div className="flex-1">
+                            <h3 className="font-semibold">Labs</h3>
+                            <p className="mt-1 text-sm text-muted-foreground">Small tests and useful tools I make along the way.</p>
+                        </div>
+                        <ArrowUpRight className="size-4 shrink-0 text-muted-foreground" aria-hidden />
+                    </a>
+                </BlurFade>
             </div>
         </section>
     );

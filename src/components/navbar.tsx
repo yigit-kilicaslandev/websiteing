@@ -11,8 +11,8 @@ import { DATA } from "@/data/resume";
 
 export default function Navbar() {
   return (
-    <div className="pointer-events-none fixed inset-x-0 bottom-4 z-30">
-      <Dock className="z-50 pointer-events-auto relative h-14 p-2 w-fit mx-auto flex gap-2 border bg-card/90 backdrop-blur-3xl shadow-[0_0_10px_3px] shadow-primary/5">
+    <nav aria-label="Main navigation" className="pointer-events-none fixed inset-x-0 bottom-4 z-30">
+      <Dock className="z-50 pointer-events-auto relative h-14 p-1 sm:p-2 w-fit mx-auto flex gap-0.5 sm:gap-2 border bg-card/90 backdrop-blur-3xl shadow-[0_0_10px_3px] shadow-primary/5">
         {DATA.navbar.map((item) => {
           const isExternal = item.href.startsWith("http");
           return (
@@ -20,6 +20,7 @@ export default function Navbar() {
               <TooltipTrigger asChild>
                 <a
                   href={item.href}
+                  aria-label={item.label}
                   target={isExternal ? "_blank" : undefined}
                   rel={isExternal ? "noopener noreferrer" : undefined}
                 >
@@ -53,6 +54,7 @@ export default function Navbar() {
                 <TooltipTrigger asChild>
                   <a
                     href={social.url}
+                    aria-label={name}
                     target={isExternal ? "_blank" : undefined}
                     rel={isExternal ? "noopener noreferrer" : undefined}
                   >
@@ -92,6 +94,6 @@ export default function Navbar() {
           </TooltipContent>
         </Tooltip>
       </Dock>
-    </div>
+    </nav>
   );
 }

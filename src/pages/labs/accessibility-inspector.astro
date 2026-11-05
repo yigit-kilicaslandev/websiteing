@@ -1,0 +1,134 @@
+---
+import Layout from "@/layouts/Layout.astro";
+export const prerender = true;
+---
+
+<Layout title="Website Accessibility Inspector" description="Check your HTML for missing alt attributes, button names, and form labels.">
+  <main>
+    <a href="/labs" class="text-sm text-muted-foreground underline underline-offset-4">← All labs</a>
+    <header class="mb-8 mt-8">
+      <p class="mb-3 font-mono text-xs uppercase tracking-widest text-muted-foreground">Lab 01 / First version</p>
+      <h1 class="mb-4 text-3xl font-semibold tracking-tight">Website Accessibility Inspector</h1>
+      <p class="text-sm leading-relaxed text-muted-foreground">Paste your HTML to check for missing alt attributes, button names, and form labels. Each result explains what needs fixing.</p>
+    </header>
+
+    <section aria-labelledby="input-heading" class="rounded-xl border bg-card p-5 sm:p-6">
+      <h2 id="input-heading" class="mb-2 text-lg font-medium">Paste your HTML</h2>
+      <p id="html-help" class="mb-5 text-sm leading-relaxed text-muted-foreground">A small snippet or a whole page is fine. Your code stays in your browser and won't run. This version checks HTML, so you can't paste a website URL.</p>
+      <form id="inspector-form">
+        <label for="html-input" class="mb-2 block text-sm font-medium">HTML to inspect</label>
+        <textarea id="html-input" aria-describedby="html-help input-limit" spellcheck="false" rows="11" placeholder={'<img src="photo.jpg">\n<button></button>\n<input type="email">'} class="w-full resize-y rounded-lg border bg-background p-3 font-mono text-xs leading-relaxed"></textarea>
+        <p id="input-limit" class="mb-4 mt-2 text-xs text-muted-foreground">Up to 200,000 characters.</p>
+        <div class="flex flex-wrap gap-2">
+          <button type="submit" class="bg-primary text-primary-foreground">Inspect HTML</button>
+          <button type="button" id="load-example">Load example</button>
+          <button type="button" id="clear-input">Clear</button>
+        </div>
+        <p id="input-error" role="alert" class="mt-3 text-sm" hidden></p>
+      </form>
+      <noscript><p class="mt-4 text-sm">This tool needs JavaScript turned on to check your HTML.</p></noscript>
+    </section>
+
+    <p id="inspection-status" role="status" aria-live="polite" aria-atomic="true" class="my-5 text-sm text-muted-foreground">No results yet. Paste your HTML or load the example to get started.</p>
+    <section id="results" aria-labelledby="results-heading" hidden>
+      <h2 id="results-heading" tabindex="-1" class="mb-3 text-xl font-semibold tracking-tight">Results</h2>
+      <p id="check-counts" class="mb-5 text-xs text-muted-foreground"></p>
+      <ol id="finding-list" class="space-y-4"></ol>
+      <p id="no-findings" class="rounded-xl border p-5 text-sm leading-relaxed" hidden>These three checks found no issues. That does not mean the page is fully accessible. You still need to test it with a keyboard and a screen reader.</p>
+    </section>
+
+    <aside class="mt-10 border-t pt-6" aria-labelledby="limits-heading">
+      <h2 id="limits-heading" class="mb-3 text-base font-medium">What it misses</h2>
+      <ul class="list-disc space-y-2 pl-5 text-sm leading-relaxed text-muted-foreground">
+        <li>It can spot a missing alt attribute, but it can't tell whether the description is useful. Empty alt text is allowed for decorative images.</li>
+        <li>It checks text, image alt text inside buttons, labels, aria-label, aria-labelledby, and title. These cover common cases, but complex ARIA still needs a manual check.</li>
+        <li>It skips elements marked hidden, inert, or aria-hidden="true". It does not read CSS, run scripts, or look inside shadow DOM and nested templates.</li>
+        <li>It won't check contrast, keyboard controls, or focus order. It only sees the HTML you paste, which may differ from the page after JavaScript runs. This isn't a full accessibility audit.</li>
+      </ul>
+    </aside>
+  </main>
+</Layout>
+
+<style>
+  button { border: 1px solid var(--border); border-radius: var(--radius); padding: 0.6rem 0.8rem; font-size: 0.75rem; font-weight: 500; cursor: pointer; }
+  button:hover { opacity: 0.8; }
+  button:focus-visible, textarea:focus-visible, a:focus-visible { outline: 2px solid var(--foreground); outline-offset: 3px; }
+</style>
+
+<script>
+  import { inspectHTML } from "@/lib/accessibility-inspector.js";
+
+  const input = document.querySelector<HTMLTextAreaElement>("#html-input")!;
+  const results = document.querySelector<HTMLElement>("#results")!;
+  const status = document.querySelector<HTMLElement>("#inspection-status")!;
+  const error = document.querySelector<HTMLElement>("#input-error")!;
+  const list = document.querySelector<HTMLOListElement>("#finding-list")!;
+  const example = `<img src="team.jpg">
+<button><svg aria-hidden="true"></svg></button>
+<input type="email" placeholder="Email address">
+
+<!-- Examples that pass these checks. -->
+<img src="divider.svg" alt="">
+<button aria-label="Close dialog">×</button>
+<label for="name">Your name</label>
+<input id="name" type="text">`;
+
+  function reset(message: string) {
+    results.hidden = true;
+    list.replaceChildren();
+    error.hidden = true;
+    input.removeAttribute("aria-invalid");
+    status.textContent = message;
+  }
+  input.addEventListener("input", () => reset("You edited the HTML. Run the check again to update the results."));
+  document.querySelector("#load-example")!.addEventListener("click", () => {
+    input.value = example;
+    reset("Example loaded. Click Inspect HTML to find the three issues.");
+    input.focus();
+  });
+  document.querySelector("#clear-input")!.addEventListener("click", () => {
+    input.value = "";
+    reset("Cleared. Paste some HTML to try again.");
+    input.focus();
+  });
+  document.querySelector("#inspector-form")!.addEventListener("submit", (event) => {
+    event.preventDefault();
+    reset("");
+    try {
+      const { findings, counts } = inspectHTML(input.value, document);
+      for (const finding of findings) {
+        const item = document.createElement("li");
+        item.className = "rounded-xl border bg-card p-5";
+        const heading = document.createElement("h3");
+        heading.className = "mb-2 text-base font-medium";
+        heading.textContent = finding.title;
+        const location = document.createElement("p");
+        location.className = "mb-3 break-all font-mono text-xs text-muted-foreground";
+        location.textContent = finding.element;
+        const snippet = document.createElement("pre");
+        snippet.className = "mb-3 overflow-x-auto rounded-md bg-muted p-3 text-xs";
+        const code = document.createElement("code");
+        code.textContent = finding.snippet;
+        snippet.append(code);
+        const explanation = document.createElement("p");
+        explanation.className = "mb-3 text-sm text-muted-foreground";
+        explanation.textContent = finding.explanation;
+        const fix = document.createElement("p");
+        fix.className = "text-sm leading-relaxed";
+        fix.textContent = finding.fix;
+        item.append(heading, location, snippet, explanation, fix);
+        list.append(item);
+      }
+      document.querySelector("#check-counts")!.textContent = `Checked ${counts.images} images · ${counts.buttons} buttons · ${counts.fields} form controls. Element numbers count HTML elements, not lines of code.`;
+      document.querySelector<HTMLElement>("#no-findings")!.hidden = findings.length !== 0;
+      results.hidden = false;
+      status.textContent = `Check complete. ${findings.length} potential ${findings.length === 1 ? "issue" : "issues"} found.`;
+      document.querySelector<HTMLElement>("#results-heading")!.focus();
+    } catch (cause) {
+      error.textContent = cause instanceof Error ? cause.message : "Couldn't check this HTML. Try a smaller snippet.";
+      error.hidden = false;
+      input.setAttribute("aria-invalid", "true");
+      input.focus();
+    }
+  });
+</script>

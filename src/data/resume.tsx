@@ -1,6 +1,6 @@
 import type { ReactNode, SVGProps } from "react";
 import { Icons } from "@/components/icons";
-import { House, Library, X } from "lucide-react";
+import { FlaskConical, House, Library, X } from "lucide-react";
 import {
   siArduino,
   siGit,
@@ -95,6 +95,7 @@ export const DATA = {
   navbar: [
     { href: "/", icon: House, label: "Home" },
     { href: "/blog", icon: Library, label: "Blog" },
+    { href: "/labs", icon: FlaskConical, label: "Labs" },
   ],
   contact: {
     email: "contact@yigitkilicaslan.com",

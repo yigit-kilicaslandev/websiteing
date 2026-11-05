@@ -1,0 +1,22 @@
+---
+import Layout from "@/layouts/Layout.astro";
+export const prerender = true;
+---
+
+<Layout title="Labs" description="Tools and experiments I'm working on.">
+  <main>
+    <p class="mb-3 font-mono text-xs uppercase tracking-widest text-muted-foreground">Experiments / 01</p>
+    <h1 class="mb-4 text-3xl font-semibold tracking-tight">Labs</h1>
+    <p class="mb-10 text-sm leading-relaxed text-muted-foreground">This is where I put the tools and experiments I'm working on. You can try them here.</p>
+    <a href="/labs/accessibility-inspector" class="group block rounded-xl border bg-card p-6 transition-colors hover:bg-muted/50 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring">
+      <div class="mb-5 flex items-center justify-between gap-4">
+        <span class="font-mono text-xs text-muted-foreground">01 / ACCESSIBILITY</span>
+        <span class="rounded-md border px-2 py-1 text-xs">First version</span>
+      </div>
+      <h2 class="mb-3 text-xl font-semibold tracking-tight">Website Accessibility Inspector</h2>
+      <p class="mb-6 text-sm leading-relaxed text-muted-foreground">Paste some HTML to check for missing alt attributes, button names, and form labels. It shows what to fix and why.</p>
+      <span class="text-sm font-medium">Open inspector <span aria-hidden="true">↗</span></span>
+    </a>
+    <p class="mt-6 text-xs text-muted-foreground">I'll add more here as I make them.</p>
+  </main>
+</Layout>
